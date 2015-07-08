@@ -1,0 +1,119 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li class="active"><a href="#">Ability Scores</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Generate Ability Scores
+	</h1>
+</div>
+
+<div class="note note-info">
+	<h4 class="note-title">Note About Abilities</h4>
+	<p>
+		Every character has six abilities that represent the character's basic strengths and weaknesses.
+		These abilities-Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma-affect
+		everything a hero does, from fighting to using skills.
+	</p>
+	<p>
+		A score of 10 or 11 in an ability is average. Higher scores grant bonuses, and lower scores give
+		penalties. When you create your character, you'll want to put your higher scores into the abilities
+		most closely associated with your character's class.
+	</p>
+</div>
+
+
+
+
+<div class="panel form-horizontal">
+	<div class="panel-heading">
+		<span class="panel-title">Generation Method</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Method</label>
+			<div class="col-sm-8">
+				<select class="form-control" ng-model="selectedGenMethod" ng-change="genMethodChanged()">
+					<option value="DieRollGeneration">Die Roll Generation</option>
+					<option value="PlannedGeneration">Planned Generation</option>
+					<option value="StandardScorePackage">Standard Score Package</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group" ng-show="showGenDescription">
+			<label class="control-label col-sm-2">&nbsp;</label>
+			<div class="col-sm-8">
+				<small>{{genMethodDescription}}</small>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2">&nbsp;</label>
+			<div class="col-sm-8">
+				<button class="btn btn-default" ng-click="acceptMethod()">Select This Method</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel form-horizontal" ng-show="showAbilityForm">
+	<div class="panel-heading">Ability Scores</div>
+	<div class="panel-body">
+		<div class="form-group" ng-show="showAmountToSpend">
+			<label class="col-sm-2 control-label">
+				Amount Left to Spend
+			</label>
+			<div class="col-sm-2">
+				<small class="form-control" ng-class="amountLeftToSpendClass">{{amountLeftToSpend}}</small>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">
+				Strength
+			</label>
+			<div class="col-sm-2">
+				<input type="number" class="form-control" ng-model="strength" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Dexterity</label>
+			<div class="col-sm-2">
+				<input type="number" class="form-control" ng-model="dexterity" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Constitution</label>
+			<div class="col-sm-2">
+				<input type="number" class="form-control" ng-model="constitution" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Intelligence</label>
+			<div class="col-sm-2">
+				<input type="number" class="form-control" ng-model="intelligence" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Wisdom</label>
+			<div class="col-sm-2">
+				<input type="number" class="form-control" ng-model="wisdom" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Charisma</label>
+			<div class="col-sm-2">
+				<input type="number" class="form-control" ng-model="charisma" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2">&nbsp;</label>
+			<div class="col-sm-4">
+				<button class="btn btn-default" ng-click="acceptScores()" style="margin-right:30px;">Accept These Scores</button>
+				<i class="fa fa-spin fa-spinner" ng-show="loading"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+

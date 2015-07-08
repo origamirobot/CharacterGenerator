@@ -1,0 +1,47 @@
+﻿@using System.Web.Mvc.Html
+@using System.Web.Optimization
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8" lang="en" ng-app="skateLurkerApp" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if IE 9]> <html class="ie9 gt-ie8" lang="en" ng-app="skateLurkerApp" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" ng-app="charGenApp" xmlns:ng="http://angularjs.org" class="gt-ie8 gt-ie9 not-ie pxajs">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+	<title>@ViewBag.Title</title>
+	<base href="/">
+	@Scripts.Render("~/js/modernizr")
+	@Styles.Render("~/css/bootstrap");
+	@Styles.Render("~/css/fontawesome");
+	@Styles.Render("~/css/theme");
+	<script> var init = []; </script>
+</head>
+<body class="theme-default main-menu-fixed" ng-controller="appCtrl">
+	<div id="main-wrapper">
+		@Html.Partial("_Top")
+		@Html.Partial("_Left")
+		<div id="content-wrapper" ng-cloak>
+			@RenderBody()
+		</div>
+		<div id="main-menu-bg"></div>
+	</div>
+
+	@Scripts.Render("~/js/jquery")
+	@Scripts.Render("~/js/bootstrap")
+	@Scripts.Render("~/js/angular")
+	@Scripts.Render("~/js/angularui")
+	@Scripts.Render("~/js/bootstrapui")
+	@Scripts.Render("~/js/theme")
+	@Scripts.Render("~/js/app")
+	@Scripts.Render("~/js/controllers")
+	@Scripts.Render("~/js/directives")
+	@Scripts.Render("~/js/services")
+	@Scripts.Render("~/js/filters")
+
+
+	@RenderSection("scripts", required: false)
+</body>
+</html>

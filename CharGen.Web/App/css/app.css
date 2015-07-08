@@ -1,0 +1,31 @@
+﻿
+html { overflow: -moz-scrollbars-vertical;  overflow-y: scroll; }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display:none; }
+
+
+
+#content-wrapper { padding-top:44px;}
+
+#page-bg			{ height: 100%; left: 0; overflow: hidden; position: fixed; top: 0; width: 100%; z-index: 0; }
+#page-bg .overlay	{ background: rgba(0, 0, 0, 0.9); bottom: 0; left: 0; position: absolute; right: 0; top: 0; z-index:1; }
+
+
+.social-button { -ms-border-radius: 9999px; border-radius: 9999px; padding:10px; width:50px; font-size:20px; text-align:center; display:inline-block; color:#FFF; }
+.social-button:visited, .social-button:active, .social-button:focus {  color:#FFF; }
+.social-button:hover { color:#FFF; background: #444 !important; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+
+.page-signin .form-actions a.forgot-password { border-bottom:none;}
+
+
+
+.page-profile .about-me { max-height: 100px; overflow: hidden; }
+.page-profile .about-me-ex { max-height:999999px; overflow:hidden; }
+.page-profile a.about-expander { text-decoration:1px dotted #EEE; display:block; border-top:1px solid #CCC; text-align:center; margin-top:10px; }
+
+.want { padding:10px 0; border-bottom:1px solid #CCC; }
+.want::after { clear:both;}
+.want .image { display: block; float: left; margin-right: 10px; margin-top: 2px; height: 60px; }
+.want .body { height:60px; padding:10px 0;}
+.want .controls { float: right; margin-top: 4px; display:none; } 
+.want:hover .controls { display:block; } 
+
