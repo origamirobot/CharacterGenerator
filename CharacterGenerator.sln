@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharGen.Core", "CharGen.Core\CharGen.Core.csproj", "{3D5694E8-3843-4CF7-B902-F6AF49A05FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharGen.Data", "CharGen.Data\CharGen.Data.csproj", "{659C6309-15E0-4CF0-B2A8-63BE59AFD1B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharGen", "CharGen\CharGen.csproj", "{1733C32D-0A81-4794-B727-0937D5FBB227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D5694E8-3843-4CF7-B902-F6AF49A05FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5694E8-3843-4CF7-B902-F6AF49A05FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5694E8-3843-4CF7-B902-F6AF49A05FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5694E8-3843-4CF7-B902-F6AF49A05FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{659C6309-15E0-4CF0-B2A8-63BE59AFD1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{659C6309-15E0-4CF0-B2A8-63BE59AFD1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659C6309-15E0-4CF0-B2A8-63BE59AFD1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{659C6309-15E0-4CF0-B2A8-63BE59AFD1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1733C32D-0A81-4794-B727-0937D5FBB227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1733C32D-0A81-4794-B727-0937D5FBB227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1733C32D-0A81-4794-B727-0937D5FBB227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1733C32D-0A81-4794-B727-0937D5FBB227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
