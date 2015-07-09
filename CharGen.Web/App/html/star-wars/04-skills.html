@@ -1,0 +1,122 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li><a href="/star-wars-d20/">Start</a></li>
+	<li><a href="/star-wars-d20/ability">Ability Scores</a></li>
+	<li><a href="/star-wars-d20/species">Species</a></li>
+	<li><a href="/star-wars-d20/class">Class</a></li>
+	<li class="active"><a href="#">Skills</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Select Your Skills
+	</h1>
+</div>
+
+<div class="panel">
+	<div class="panel-heading">Skills</div>
+	<div class="panel-body">
+
+		<div ng-show="showJediSkills">
+			<h4>Jedi Skills <small>(skills left: {{skillsLeft}})</small></h4>
+			<div class="row">
+				<div class="radio col-sm-4" style="margin-top: 0;" ng-repeat="skill in jediSkills">
+					<label>
+						<input type="checkbox" ng-model="skill.value" class="px" ng-change="jediSkillsChanged()" />
+						<span class="lbl">{{skill.name}} <small style="font-size:9px;">({{skill.ability}})</small></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="showNobleSkills">
+			<h4>Noble Skills <small>(skills left: {{skillsLeft}})</small></h4>
+			<div class="row">
+				<div class="radio col-sm-4" style="margin-top: 0;" ng-repeat="skill in nobleSkills">
+					<label>
+						<input type="checkbox" ng-model="skill.value" class="px" ng-change="nobleSkillsChanged()" />
+						<span class="lbl">{{skill.name}} <small style="font-size:9px;">({{skill.ability}})</small></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="showScoutSkills">
+			<h4>Scout Skills <small>(skills left: {{skillsLeft}})</small></h4>
+			<div class="row">
+				<div class="radio col-sm-4" style="margin-top: 0;" ng-repeat="skill in scoutSkills">
+					<label>
+						<input type="checkbox" ng-model="skill.value" class="px" ng-change="scoutSkillsChanged()" />
+						<span class="lbl">{{skill.name}} <small style="font-size:9px;">({{skill.ability}})</small></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="showScoundrelSkills">
+			<h4>Scoundrel Skills <small>(skills left: {{skillsLeft}})</small></h4>
+			<div class="row">
+				<div class="radio col-sm-4" style="margin-top: 0;" ng-repeat="skill in scoundrelSkills">
+					<label>
+						<input type="checkbox" ng-model="skill.value" class="px" ng-change="scoundrelSkillsChanged()" />
+						<span class="lbl">{{skill.name}} <small style="font-size:9px;">({{skill.ability}})</small></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="showSoldierSkills">
+			<h4>Soldier Skills <small>(skills left: {{skillsLeft}})</small></h4>
+			<div class="row">
+				<div class="radio col-sm-4" style="margin-top: 0;" ng-repeat="skill in soldierSkills">
+					<label>
+						<input type="checkbox" ng-model="skill.value" class="px" ng-change="soldierSkillsChanged()" />
+						<span class="lbl">{{skill.name}} <small style="font-size:9px;">({{skill.ability}})</small></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="pull-right">
+				<button class="btn btn-primary" ng-click="accept()">Continue</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--<div class="panel form-horizontal">
+	<div class="panel-heading">
+		<span class="panel-title">Enter Gift Card Number</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Card Number</label>
+			<div class="col-sm-8">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-credit-card fa-fw"></i></span>
+					<input type="text" class="form-control" ng-model="cardNumber" />
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Reason</label>
+			<div class="col-sm-8">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-comment fa-fw"></i></span>
+					<input type="text" class="form-control" ng-model="reason" maxlength="32" />
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2">&nbsp;</label>
+			<div class="col-sm-8">
+				<button class="btn btn-default" ng-click="deactivate()">Deactivate</button>
+				<i class="fa fa-spin fa-spinner" ng-show="loading"></i>
+			</div>
+		</div>
+	</div>
+</div>-->

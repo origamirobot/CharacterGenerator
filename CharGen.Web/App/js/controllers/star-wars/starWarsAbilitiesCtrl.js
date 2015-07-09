@@ -93,6 +93,13 @@ var starWarsAbilitiesCtrl = function ($scope, character, $location) {
 		if ($scope.amountLeftToSpend !== 0)
 			return;
 
+
+		character.sex = $scope.sex;
+		character.characterName = $scope.characterName;
+		character.playerName = $scope.playerName;
+		character.height = $scope.height;
+		character.weight = $scope.weight;
+
 		character.strength = $scope.strength;
 		character.dexterity = $scope.dexterity;
 		character.constitution = $scope.constitution;

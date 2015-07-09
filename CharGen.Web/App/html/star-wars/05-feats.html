@@ -1,0 +1,35 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li><a href="/star-wars-d20/ability">Ability Scores</a></li>
+	<li><a href="/star-wars-d20/species">Species</a></li>
+	<li><a href="/star-wars-d20/class">Class</a></li>
+	<li><a href="/star-wars-d20/skills">Skills</a></li>
+	<li class="active"><a href="#">Feats</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Select Your Feat
+	</h1>
+</div>
+
+<div class="panel">
+	<div class="panel-heading">Select Feat <small>(feats left: {{featsLeft}})</small></div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="radio col-sm-4" style="margin-top: 0;" ng-repeat="feat in feats">
+				<label>
+					<input type="checkbox" ng-model="feat.value" class="px" ng-change="featsChanged()" />
+					<span class="lbl">{{feat.name}}</span>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="pull-right">
+				<button class="btn btn-primary" ng-click="accept()">Continue</button>
+			</div>
+		</div>
+	</div>
+</div>
+

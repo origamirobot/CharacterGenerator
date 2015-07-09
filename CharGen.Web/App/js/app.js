@@ -12,11 +12,9 @@ var charGenApp = angular.module('charGenApp', ["ngResource", "ngMessages", "ngRo
 			.when('/star-wars-d20/abilities', { templateUrl: '/app/html/star-wars/01-abilities.html', controller: 'starWarsAbilitiesCtrl' })
 			.when('/star-wars-d20/species', { templateUrl: '/app/html/star-wars/02-species.html', controller: 'starWarsSpeciesCtrl' })
 			.when('/star-wars-d20/class', { templateUrl: '/app/html/star-wars/03-class.html', controller: 'starWarsClassCtrl' })
-			.when('/star-wars-d20/assign', { templateUrl: '/app/html/star-wars/04-assign.html', controller: 'starWarsAssignCtrl' })
-			.when('/star-wars-d20/combat', { templateUrl: '/app/html/star-wars/05-combat.html', controller: 'starWarsCombatCtrl' })
-			.when('/star-wars-d20/skills', { templateUrl: '/app/html/star-wars/06-skills.html', controller: 'starWarsSkillsCtrl' })
-			.when('/star-wars-d20/feats', { templateUrl: '/app/html/star-wars/07-feats.html', controller: 'starWarsFeatsCtrl' })
-			.when('/star-wars-d20/talent', { templateUrl: '/app/html/star-wars/08-talent.html', controller: 'starWarsTalentCtrl' })
+			.when('/star-wars-d20/skills', { templateUrl: '/app/html/star-wars/04-skills.html', controller: 'starWarsSkillsCtrl' })
+			.when('/star-wars-d20/feats', { templateUrl: '/app/html/star-wars/05-feats.html', controller: 'starWarsFeatsCtrl' })
+			.when('/star-wars-d20/character', { templateUrl: '/app/html/star-wars/06-character.html', controller: 'starWarsCharacterCtrl' })
 			.when('/star-wars-d20/gear', { templateUrl: '/app/html/star-wars/09-gear.html', controller: 'starWarsGearCtrl' })
 			.when('/star-wars-d20/finish', { templateUrl: '/app/html/star-wars/10-finish.html', controller: 'starWarsFinishCtrl' });
 	});
@@ -56,13 +54,24 @@ charGenApp.run(function ($rootScope, $templateCache, $log) {
 
 
 charGenApp.constant("character", {
+
 	generationMethod: '',
+	species: '',
+	'class': '',
 	strength: 0,
 	dexterity: 0,
 	constitution: 0,
 	intelligence: 0,
 	wisdom: 0,
-	charisma: 0
+	charisma: 0,
+	strengthModifier: 0,
+	dexterityModifier: 0,
+	constitutionModifier: 0,
+	intelligenceModifier: 0,
+	wisdomModifier: 0,
+	charismaModifier: 0,
 
+	skills : [],
+	feats: [],
 });
 

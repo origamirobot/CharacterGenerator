@@ -1,5 +1,4 @@
-﻿<ul class="breadcrumb breadcrumb-page">
-	<div class="breadcrumb-label text-light-gray">You are here: </div>
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
 	<li><a href="/">Home</a></li>
 	<li><a href="#">Star Wars</a></li>
 	<li><a href="/star-wars-d20/">Start</a></li>
@@ -13,38 +12,395 @@
 	</h1>
 </div>
 
+<div class="note note-info">
+	<h4 class="note-title">Note About Species</h4>
+	<p>
+		Your character's species provides plenty of clues as to the sort of person he or she is, how he or she feels about characters of other species
+		and what motivates him or her.
+	</p>
+	<p>
+		Remember, however, that the species descriptions only apply to the mojority of people. In each species, some individuals diverge from the norm,
+		and you character can be one of these.
+	</p>
+</div>
 
 
-
-<!--<div class="panel form-horizontal">
-	<div class="panel-heading">
-		<span class="panel-title">Enter Gift Card Number</span>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="panel">
+			<div class="panel-heading">Pick a Species</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Human" checked="" class="px" ng-change="speciesChanged()"/>
+								<span class="lbl">Human</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Bothan" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Bothan</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Cerean" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Cerean</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Duros" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Duros</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Ewok" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Ewok</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Gamorrean" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Gamorrean</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Gungan" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Gungan</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Ithorian" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Ithorian</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Kel Dor" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Kel Dor</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Mon Calamari" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Mon Calamari</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Quarren" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Quarren</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Rodian" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Rodian</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Sullustan" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Sullustan</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Trandoshan" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Trandoshan</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Twi'lek" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Twi'lek</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Wookiee" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Wookiee</span>
+							</label>
+						</div>
+						<div class="radio" style="margin-top: 0;">
+							<label>
+								<input type="radio" name="species" ng-model="selectedSpecies" value="Zabrak" checked="" class="px" ng-change="speciesChanged()" />
+								<span class="lbl">Zabrak</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<div class="col-sm-6">
+		<div class="table-light">
+			<div class="table-header">
+				<div class="table-caption">Ability Scores</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Ability</th>
+						<th>Base Score</th>
+						<th>Modifier</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Strength</td>
+						<td class="text-center">{{strength}}</td>
+						<td class="text-center" style="position:relative;">
+							{{strengthModifier}}
+							<i ng-class="strengthClass" style=" position:absolute; right:1px; top:10px;" ></i>
+						</td>
+						<td class="text-center">{{strengthTotal}}</td>
+					</tr>
+					<tr>
+						<td>Dexterity</td>
+						<td class="text-center">{{dexterity}}</td>
+						<td class="text-center" style="position:relative;">
+							{{dexterityModifier}}
+							<i ng-class="dexterityClass" style="position:absolute; right:1px; top:10px;" ></i>
+						</td>
+						<td class="text-center">{{dexterityTotal}}</td>
+					</tr>
+					<tr>
+						<td>Constitution</td>
+						<td class="text-center">{{constitution}}</td>
+						<td class="text-center" style="position:relative;">
+							{{constitutionModifier}}
+							<i ng-class="constitutionClass" style="position:absolute; right:1px; top:10px;" ></i>
+						</td>
+						<td class="text-center">{{constitutionTotal}}</td>
+					</tr>
+					<tr>
+						<td>Intelligence</td>
+						<td class="text-center">{{intelligence}}</td>
+						<td class="text-center" style="position:relative;">
+							{{intelligenceModifier}}
+							<i ng-class="intelligenceClass" style="position:absolute; right:1px; top:10px;" ></i>
+						</td>
+						<td class="text-center">{{intelligenceTotal}}</td>
+					</tr>
+					<tr>
+						<td>Wisdom</td>
+						<td class="text-center">{{wisdom}}</td>
+						<td class="text-center" style="position:relative;">
+							{{wisdomModifier}}
+							<i ng-class="wisdomClass" style="position:absolute; right:1px; top:10px;" ></i>
+						</td>
+						<td class="text-center">{{wisdomTotal}}</td>
+					</tr>
+					<tr>
+						<td>Charisma</td>
+						<td class="text-center">{{charisma}}</td>
+						<td class="text-center" style="position:relative;">
+							{{charismaModifier}}
+							<i ng-class="charismaClass" style="position:absolute; right:1px; top:10px;" ></i>
+						</td>
+						<td class="text-center">{{charismaTotal}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+<div class="note note-info">
+	<h4 class="note-title">Extra Languages</h4>
+	<p>
+		Characters with an Intelligence bonus know how to speak, read, and write other languages as well. For each point of Intelligence bonus, a character can speak, read, and write one additional language of his or her choice.
+	</p>
+</div>
+
+
+
+<div class="panel">
+	<div class="panel-heading">Languages</div>
 	<div class="panel-body">
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Card Number</label>
-			<div class="col-sm-8">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-credit-card fa-fw"></i></span>
-					<input type="text" class="form-control" ng-model="cardNumber" />
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="table-light">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Speak</th>
+								<th>Read</th>
+								<th>Write</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Basic</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksBasic" ng-disabled="speaksBasicDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsBasic" ng-disabled="readsBasicDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesBasic" ng-disabled="writesBasicDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Binary</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksBinary" ng-disabled="speaksBinaryDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsBinary"  ng-disabled="readsBinaryDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesBinary" ng-disabled="writesBinaryDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Bocce</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksBocce" ng-disabled="speaksBocceDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsBocce" ng-disabled="readsBocceDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesBocce" ng-disabled="writesBocceDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Bothese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksBothese" ng-disabled="speaksBotheseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsBothese" ng-disabled="readsBotheseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesBothese" ng-disabled="writesBotheseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Cerean</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksCerean" ng-disabled="speaksCereanDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsCerean" ng-disabled="readsCereanDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesCerean" ng-disabled="writesCereanDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Dosh</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksDosh" ng-disabled="speaksDoshDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsDosh" ng-disabled="readsDoshDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesDosh" ng-disabled="writesDoshDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Durese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksDurese" ng-disabled="speaksDureseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsDurese" ng-disabled="readsDureseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesDurese" ng-disabled="writesDureseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Ewokese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksEwokese" ng-disabled="speaksEwokeseDisabled" /></td>
+								<td class="text-center"><i class="fa fa-ban" title="There is no written version of this language"></i></td>
+								<td class="text-center"><i class="fa fa-ban" title="There is no written version of this language"></i></td>
+							</tr>
+							<tr>
+								<td>Gamorrean</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksGamorrean" ng-disabled="speaksGamorreanDisabled" /></td>
+								<td class="text-center"><i class="fa fa-ban" title="There is no written version of this language"></i></td>
+								<td class="text-center"><i class="fa fa-ban" title="There is no written version of this language"></i></td>
+							</tr>
+							<tr>
+								<td>Gunganese*</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksGunganese" ng-disabled="speaksGunganeseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsGunganese" ng-disabled="readsGunganeseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesGunganese" ng-disabled="writesGunganeseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>High Galactic</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksHighGalactic" ng-disabled="speaksHighGalacticDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsHighGalactic" ng-disabled="readsHighGalacticDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesHighGalactic" ng-disabled="writesHighGalacticDisabled" /></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Reason</label>
-			<div class="col-sm-8">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-comment fa-fw"></i></span>
-					<input type="text" class="form-control" ng-model="reason" maxlength="32" />
+			<div class="col-sm-6">
+				<div class="table-light">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Speak</th>
+								<th>Read</th>
+								<th>Write</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Huttese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksHuttese" ng-disabled="speaksHutteseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsHuttese" ng-disabled="readsHutteseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesHuttese" ng-disabled="writesHutteseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Ithorese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksIthorese" ng-disabled="speaksIthoreseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsIthorese" ng-disabled="readsIthoreseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesIthorese" ng-disabled="writesIthoreseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Jawa Trade Language*</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksJawa" ng-disabled="speaksJawaDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsJawa" ng-disabled="readsJawaDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesJawa" ng-disabled="writesJawaDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Kel Dor</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksKelDor" ng-disabled="speaksKelDorDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsKelDor" ng-disabled="readsKelDorDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesKelDor" ng-disabled="writesKelDorDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Mon Calamarian</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksMonCalamarian" ng-disabled="speaksMonCalamarianDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsMonCalamarian" ng-disabled="readsMonCalamarianDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesMonCalamarian" ng-disabled="writesMonCalamarianDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Quarrenese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksQuarrenese" ng-disabled="speaksQuarreneseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsQuarrenese" ng-disabled="readsQuarreneseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesQuarrenese" ng-disabled="writesQuarreneseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Rodese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksRodese" ng-disabled="speaksRodeseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsRodese" ng-disabled="readsRodeseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesRodese" ng-disabled="writesRodeseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Ryl</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksRyl" ng-disabled="speaksRylDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsRyl" ng-disabled="readsRylDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesRyl" ng-disabled="writesRylDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Shyriiwook</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksShyriiwook" ng-disabled="speaksShyriiwookDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsShyriiwook" ng-disabled="readsShyriiwookDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesShyriiwook" ng-disabled="writesShyriiwookDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Sullustese</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksSullustese" ng-disabled="speaksSullusteseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsSullustese" ng-disabled="readsSullusteseDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesSullustese" ng-disabled="writesSullusteseDisabled" /></td>
+							</tr>
+							<tr>
+								<td>Zabrak</td>
+								<td class="text-center"><input type="checkbox" ng-model="speaksZabrak" ng-disabled="speaksZabrakDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="readsZabrak" ng-disabled="readsZabrakDisabled" /></td>
+								<td class="text-center"><input type="checkbox" ng-model="writesZabrak" ng-disabled="writesZabrakDisabled" /></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
+
 			</div>
 		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2">&nbsp;</label>
-			<div class="col-sm-8">
-				<button class="btn btn-default" ng-click="deactivate()">Deactivate</button>
-				<i class="fa fa-spin fa-spinner" ng-show="loading"></i>
+		<div class="row">
+			<div class="pull-right">
+				<button ng-click="accept()" class=" btn btn-primary">Accept and Continue</button>
 			</div>
 		</div>
 	</div>
-</div>-->
+</div>
+

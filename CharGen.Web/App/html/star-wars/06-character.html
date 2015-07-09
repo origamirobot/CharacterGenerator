@@ -1,0 +1,221 @@
+﻿<ul class="breadcrumb breadcrumb-page">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li><a href="/star-wars-d20/ability">Ability Scores</a></li>
+	<li><a href="/star-wars-d20/species">Species</a></li>
+	<li><a href="/star-wars-d20/class">Class</a></li>
+	<li><a href="/star-wars-d20/skills">Skills</a></li>
+	<li><a href="/star-wars-d20/feats">Feats</a></li>
+	<li class="active"><a href="#">Character</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Your Character
+	</h1>
+</div>
+
+
+<div class="panel form-horizontal">
+	<div class="panel-heading">
+		<span class="panel-title">Basic Info</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Character Name</label>
+			<div class="col-sm-8">
+				{{character.characterName}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Player Name</label>
+			<div class="col-sm-8">
+				{{character.playerName}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Sex</label>
+			<div class="col-sm-8">
+				{{character.sex}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Height</label>
+			<div class="col-sm-8">
+				{{character.height}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Weight</label>
+			<div class="col-sm-8">
+				{{character.weight}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Class</label>
+			<div class="col-sm-8">
+				{{character.class}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Species</label>
+			<div class="col-sm-8">
+				{{character.species}}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Ability Scores</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Ability</th>
+				<th>Base Score</th>
+				<th>Modifier</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Strength</td>
+				<td class="text-center">{{character.strength}}</td>
+				<td class="text-center" style="position:relative;">
+					{{character.strengthModifier}}
+					<i ng-class="strengthClass" style=" position:absolute; right:1px; top:10px;"></i>
+				</td>
+				<td class="text-center">{{character.strength + character.strengthModifier}}</td>
+			</tr>
+			<tr>
+				<td>Dexterity</td>
+				<td class="text-center">{{character.dexterity}}</td>
+				<td class="text-center" style="position:relative;">
+					{{character.dexterityModifier}}
+					<i ng-class="dexterityClass" style="position:absolute; right:1px; top:10px;"></i>
+				</td>
+				<td class="text-center">{{character.dexterity + character.dexterityModifier}}</td>
+			</tr>
+			<tr>
+				<td>Constitution</td>
+				<td class="text-center">{{character.constitution}}</td>
+				<td class="text-center" style="position:relative;">
+					{{character.constitutionModifier}}
+					<i ng-class="constitutionClass" style="position:absolute; right:1px; top:10px;"></i>
+				</td>
+				<td class="text-center">{{character.constitution + character.constitutionModifier}}</td>
+			</tr>
+			<tr>
+				<td>Intelligence</td>
+				<td class="text-center">{{character.intelligence}}</td>
+				<td class="text-center" style="position:relative;">
+					{{character.intelligenceModifier}}
+					<i ng-class="intelligenceClass" style="position:absolute; right:1px; top:10px;"></i>
+				</td>
+				<td class="text-center">{{character.intelligence + character.intelligenceModifier}}</td>
+			</tr>
+			<tr>
+				<td>Wisdom</td>
+				<td class="text-center">{{character.wisdom}}</td>
+				<td class="text-center" style="position:relative;">
+					{{character.wisdomModifier}}
+					<i ng-class="wisdomClass" style="position:absolute; right:1px; top:10px;"></i>
+				</td>
+				<td class="text-center">{{character.wisdom + character.wisdomModifier}}</td>
+			</tr>
+			<tr>
+				<td>Charisma</td>
+				<td class="text-center">{{character.charisma}}</td>
+				<td class="text-center" style="position:relative;">
+					{{character.charismaModifier}}
+					<i ng-class="charismaClass" style="position:absolute; right:1px; top:10px;"></i>
+				</td>
+				<td class="text-center">{{character.charisma + character.charismaModifier}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Languages</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Language</th>
+				<th>Speak</th>
+				<th>Read</th>
+				<th>Write</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="lang in character.languages">
+				<td>{{lang.name}}</td>
+				<td class="text-center">
+					<i class="fa fa-check" ng-show="lang.speaks"></i>
+					<i class="fa fa-ban" ng-hide="lang.speaks"></i>
+				</td>
+				<td class="text-center">
+					<i class="fa fa-check" ng-show="lang.reads"></i>
+					<i class="fa fa-ban" ng-hide="lang.reads"></i>
+				</td>
+				<td class="text-center">
+					<i class="fa fa-check" ng-show="lang.writes"></i>
+					<i class="fa fa-ban" ng-hide="lang.writes"></i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Skills</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Skill</th>
+				<th>Ability</th>
+				<th>Armor Check Penalty</th>
+				<th>Use Untrained</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="skill in character.skills">
+				<td>{{skill.name}}</td>
+				<td>{{skill.ability}}</td>
+				<td class="text-center">
+					<i class="fa fa-check" ng-show="skill.armorCheck"></i>
+					<i class="fa fa-ban" ng-hide="skill.armorCheck"></i>
+				</td>
+				<td class="text-center">
+					<i class="fa fa-check" ng-show="skill.useUntrained"></i>
+					<i class="fa fa-ban" ng-hide="skill.useUntrained"></i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Feats</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Feat</th>
+				<th>Benefit</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="feat in character.feats">
+				<td>{{feat.name}}</td>
+				<td>{{feat.benefit}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -10,6 +10,56 @@
 	</h1>
 </div>
 
+
+<div class="panel form-horizontal">
+	<div class="panel-heading">
+		<span class="panel-title">Basic Info</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Character Name</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" ng-model="characterName"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Player Name</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" ng-model="playerName"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Sex</label>
+			<div class="col-sm-8">
+				<div class="radio" style="margin-top: 0;">
+					<label>
+						<input type="radio" name="sex" value="Male" ng-model="sex" checked="" class="px">
+						<span class="lbl">Male</span>
+					</label>
+				</div>
+				<div class="radio" style="margin-top: 0;">
+					<label>
+						<input type="radio" name="sex" value="Female" ng-model="sex" class="px">
+						<span class="lbl">Female</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Height</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" ng-model="height"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Weight</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" ng-model="weight"/>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="note note-info">
 	<h4 class="note-title">Note About Abilities</h4>
 	<p>
@@ -23,7 +73,6 @@
 		most closely associated with your character's class.
 	</p>
 </div>
-
 
 
 
