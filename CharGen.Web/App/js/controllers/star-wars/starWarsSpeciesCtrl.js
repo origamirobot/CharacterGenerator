@@ -1,5 +1,9 @@
-﻿
-var starWarsSpeciesCtrl = function ($scope, character, $location) {
+﻿var starWarsSpeciesCtrl = function ($scope, $location, abilityService) {
+
+
+	var character = JSON.parse(localStorage.getItem("character"));
+
+	
 
 	$scope.strength = character.strength;
 	$scope.dexterity = character.dexterity;
@@ -7,6 +11,25 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 	$scope.intelligence = character.intelligence;
 	$scope.wisdom = character.wisdom;
 	$scope.charisma = character.charisma;
+
+
+	$scope.stengthBonus = character.strengthBonus;
+	$scope.dexterityBonus = character.dexterityBonus;
+	$scope.wisdomBonus = character.wisdomBonus;
+	$scope.intelligenceBonus = character.intelligenceBonus;
+	$scope.charismaBonus = character.charismaBonus;
+	$scope.constitutionBonus = character.constitutionBonus;
+
+	$scope.strengthModifier = character.strengthModifier;
+	$scope.dexterityModifier = character.dexterityModifier;
+	$scope.constitutionModifier = character.constitutionModifier;
+	$scope.intelligenceModifier = character.intelligenceModifier;
+	$scope.wisdomModifier = character.wisdomModifier;
+	$scope.charismaModifier = character.charismaModifier;
+
+	$scope.selectedSpecies = character.species;
+	
+
 
 	$scope.languages = [
 		"Basic",
@@ -36,28 +59,81 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 
 	$scope.calculateTotals = function () {
-		$scope.strengthTotal = $scope.strength + $scope.strengthModifier;
-		$scope.dexterityTotal = $scope.dexterity + $scope.dexterityModifier;
-		$scope.constitutionTotal = $scope.constitution + $scope.constitutionModifier;
-		$scope.intelligenceTotal = $scope.intelligence + $scope.intelligenceModifier;
-		$scope.wisdomTotal = $scope.wisdom + $scope.wisdomModifier;
-		$scope.charismaTotal = $scope.charisma + $scope.charismaModifier;
+		$scope.strengthTotal = $scope.strength + $scope.strengthBonus;
+		$scope.dexterityTotal = $scope.dexterity + $scope.dexterityBonus;
+		$scope.constitutionTotal = $scope.constitution + $scope.constitutionBonus;
+		$scope.intelligenceTotal = $scope.intelligence + $scope.intelligenceBonus;
+		$scope.wisdomTotal = $scope.wisdom + $scope.wisdomBonus;
+		$scope.charismaTotal = $scope.charisma + $scope.charismaBonus;
 	};
 
-	$scope.resetModifiers = function () {
-		$scope.strengthModifier = 0;
-		$scope.dexterityModifier = 0;
-		$scope.constitutionModifier = 0;
-		$scope.intelligenceModifier = 0;
-		$scope.wisdomModifier = 0;
-		$scope.charismaModifier = 0;
+	$scope.calculateModifiers = function () {
 
-		$scope.strengthClass = '';
-		$scope.dexterityClass = '';
-		$scope.constitutionClass = '';
-		$scope.intelligenceClass = '';
-		$scope.wisdomClass = '';
-		$scope.charismaClass = '';
+		$scope.loadingModifiers = true;
+
+		var str = $scope.strength + $scope.strengthBonus;
+		var dex = $scope.dexterity + $scope.dexterityBonus;
+		var inte = $scope.intelligence + $scope.intelligenceBonus;
+		var con = $scope.constitution + $scope.constitutionBonus;
+		var wis = $scope.wisdom + $scope.wisdomBonus;
+		var cha = $scope.charisma + $scope.charismaBonus;
+
+		abilityService.getModifiers(str, dex, inte, con, wis, cha).then(function (result) {
+			$scope.loadingModifiers = false;
+			$scope.strengthModifier = result.strengthModifier;
+			$scope.dexterityModifier = result.dexterityModifier;
+			$scope.constitutionModifier = result.constitutionModifier;
+			$scope.intelligenceModifier = result.intelligenceModifier;
+			$scope.wisdomModifier = result.wisdomModifier;
+			$scope.charismaModifier = result.charismaModifier;
+		});
+
+
+	};
+
+
+	$scope.getModifier = function (abilityScore) {
+		abilityService.getModifier(abilityScore).then(function(result) {
+			return result.modifier;
+		});
+
+
+		//if (abilityScore == 1) return -5;
+		//else if (abilityScore >= 2 && abilityScore <= 3) return -4;
+		//else if (abilityScore >= 4 && abilityScore <= 5) return -3;
+		//else if (abilityScore >= 6 && abilityScore <= 7) return -2;
+		//else if (abilityScore >= 8 && abilityScore <= 9) return -1;
+		//else if (abilityScore >= 10 && abilityScore <= 11) return 0;
+		//else if (abilityScore >= 12 && abilityScore <= 13) return 1;
+		//else if (abilityScore >= 14 && abilityScore <= 15) return 2;
+		//else if (abilityScore >= 16 && abilityScore <= 17) return 3;
+		//else if (abilityScore >= 18 && abilityScore <= 19) return 4;
+		//else if (abilityScore >= 20 && abilityScore <= 21) return 5;
+		//else if (abilityScore >= 22 && abilityScore <= 23) return 6;
+		//else if (abilityScore >= 24 && abilityScore <= 25) return 7;
+		//else if (abilityScore >= 26 && abilityScore <= 27) return 8;
+		//else if (abilityScore >= 28 && abilityScore <= 29) return 9;
+		//else if (abilityScore >= 30 && abilityScore <= 31) return 10;
+		//else if (abilityScore >= 32 && abilityScore <= 33) return 11;
+		//else if (abilityScore >= 34 && abilityScore <= 35) return 12;
+		//else if (abilityScore >= 36 && abilityScore <= 37) return 13;
+	};
+
+
+	$scope.resetBonuses = function () {
+		$scope.strengthBonus = 0;
+		$scope.dexterityBonus = 0;
+		$scope.constitutionBonus = 0;
+		$scope.intelligenceBonus = 0;
+		$scope.wisdomBonus = 0;
+		$scope.charismaBonus = 0;
+
+		$scope.strengthClass = "";
+		$scope.dexterityClass = "";
+		$scope.constitutionClass = "";
+		$scope.intelligenceClass = "";
+		$scope.wisdomClass = "";
+		$scope.charismaClass = "";
 
 
 	};
@@ -81,90 +157,91 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 		}
 	};
 
-	$scope.changeStrength = function (modifier) {
-		$scope.strengthModifier = modifier;
-		if (modifier == 0) {
-			$scope.strengthClass = '';
+	$scope.changeStrength = function (bonus) {
+		$scope.strengthBonus = bonus;
+		if (bonus == 0) {
+			$scope.strengthClass = "";
 		} else {
-			$scope.strengthClass = modifier > 0 ? 'fa fa-arrow-up text-success' : 'fa fa-arrow-down text-danger';
+			$scope.strengthClass = bonus > 0 ? "fa fa-arrow-up text-success" : "fa fa-arrow-down text-danger";
 		}
 	}
 
-	$scope.changeDexterity = function (modifier) {
-		$scope.dexterityModifier = modifier;
-		if (modifier == 0) {
-			$scope.dexterityClass = '';
+	$scope.changeDexterity = function (bonus) {
+		$scope.dexterityBonus = bonus;
+		if (bonus == 0) {
+			$scope.dexterityClass = "";
 		} else {
-			$scope.dexterityClass = modifier > 0 ? 'fa fa-arrow-up text-success' : 'fa fa-arrow-down text-danger';
+			$scope.dexterityClass = bonus > 0 ? "fa fa-arrow-up text-success" : "fa fa-arrow-down text-danger";
 		}
 	}
 
-	$scope.changeIntelligence = function (modifier) {
-		$scope.intelligenceModifier = modifier;
-		if (modifier == 0) {
-			$scope.intelligenceClass = '';
+	$scope.changeIntelligence = function (bonus) {
+		$scope.intelligenceBonus = bonus;
+		if (bonus == 0) {
+			$scope.intelligenceClass = "";
 		} else {
-			$scope.intelligenceClass = modifier > 0 ? 'fa fa-arrow-up text-success' : 'fa fa-arrow-down text-danger';
+			$scope.intelligenceClass = bonus > 0 ? "fa fa-arrow-up text-success" : "fa fa-arrow-down text-danger";
 		}
 	}
 
-	$scope.changeConstitution = function (modifier) {
-		$scope.constitutionModifier = modifier;
-		if (modifier == 0) {
-			$scope.constitutionClass = '';
+	$scope.changeConstitution = function (bonus) {
+		$scope.constitutionBonus = bonus;
+		if (bonus == 0) {
+			$scope.constitutionClass = "";
 		} else {
-			$scope.constitutionClass = modifier > 0 ? 'fa fa-arrow-up text-success' : 'fa fa-arrow-down text-danger';
+			$scope.constitutionClass = bonus > 0 ? "fa fa-arrow-up text-success" : "fa fa-arrow-down text-danger";
 		}
 	}
 
-	$scope.changeCharisma = function (modifier) {
-		$scope.charismaModifier = modifier;
-		if (modifier == 0) {
-			$scope.charismaClass = '';
+	$scope.changeCharisma = function (bonus) {
+		$scope.charismaBonus = bonus;
+		if (bonus == 0) {
+			$scope.charismaClass = "";
 		} else {
-			$scope.charismaClass = modifier > 0 ? 'fa fa-arrow-up text-success' : 'fa fa-arrow-down text-danger';
+			$scope.charismaClass = bonus > 0 ? "fa fa-arrow-up text-success" : "fa fa-arrow-down text-danger";
 		}
 	}
 
-	$scope.changeWisdom = function (modifier) {
-		$scope.wisdomModifier = modifier;
-		if (modifier == 0) {
-			$scope.wisdomClass = '';
+	$scope.changeWisdom = function (bonus) {
+		$scope.wisdomBonus = bonus;
+		if (bonus == 0) {
+			$scope.wisdomClass = "";
 		} else {
-			$scope.wisdomClass = modifier > 0 ? 'fa fa-arrow-up text-success' : 'fa fa-arrow-down text-danger';
+			$scope.wisdomClass = bonus > 0 ? "fa fa-arrow-up text-success" : "fa fa-arrow-down text-danger";
 		}
 	}
 
 	$scope.speciesChanged = function () {
-		console.log('species changed to ' + $scope.selectedSpecies)
-		$scope.resetModifiers();
+		console.log("species changed to " + $scope.selectedSpecies)
+		$scope.resetBonuses();
 		$scope.resetLanguages();
 
 		switch ($scope.selectedSpecies) {
-			case 'Human': $scope.selectHuman(); break;
-			case 'Bothan': $scope.selectBothan(); break;
-			case 'Cerean': $scope.selectCerean(); break;
-			case 'Duros': $scope.selectDuros(); break;
-			case 'Ewok': $scope.selectEwok(); break;
-			case 'Gamorrean': $scope.selectGamorrean(); break;
-			case 'Gungan': $scope.selectGungan(); break;
-			case 'Ithorian': $scope.selectIthorian(); break;
-			case 'Kel Dor': $scope.selectKelDor(); break;
-			case 'Mon Calamari': $scope.selectMonCalamari(); break;
-			case 'Quarren': $scope.selectQuarren(); break;
-			case 'Rodian': $scope.selectRodian(); break;
-			case 'Sullustan': $scope.selectSullustan(); break;
-			case 'Trandoshan': $scope.selectTrandoshan(); break;
+			case "Human": $scope.selectHuman(); break;
+			case "Bothan": $scope.selectBothan(); break;
+			case "Cerean": $scope.selectCerean(); break;
+			case "Duros": $scope.selectDuros(); break;
+			case "Ewok": $scope.selectEwok(); break;
+			case "Gamorrean": $scope.selectGamorrean(); break;
+			case "Gungan": $scope.selectGungan(); break;
+			case "Ithorian": $scope.selectIthorian(); break;
+			case "Kel Dor": $scope.selectKelDor(); break;
+			case "Mon Calamari": $scope.selectMonCalamari(); break;
+			case "Quarren": $scope.selectQuarren(); break;
+			case "Rodian": $scope.selectRodian(); break;
+			case "Sullustan": $scope.selectSullustan(); break;
+			case "Trandoshan": $scope.selectTrandoshan(); break;
 			case "Twi'lek": $scope.selectTwilek(); break;
-			case 'Wookiee': $scope.selectWookiee(); break;
-			case 'Zabrak': $scope.selectZabrak(); break;
+			case "Wookiee": $scope.selectWookiee(); break;
+			case "Zabrak": $scope.selectZabrak(); break;
 		}
 		$scope.calculateTotals();
+		$scope.calculateModifiers();
 	};
 
 	$scope.selectHuman = function () {
 
-		// NO MODIFIERS
+		// NO BONUSES
 
 		// SET DEFAULT LANGUAGES
 		$scope.speaksBasic = true;
@@ -174,7 +251,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectBothan = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeConstitution(-2);
 
@@ -190,7 +267,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectCerean = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeIntelligence(2);
 		$scope.changeWisdom(2);
 		$scope.changeDexterity(-2);
@@ -207,7 +284,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectDuros = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeIntelligence(2);
 		$scope.changeConstitution(-2);
@@ -223,7 +300,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectEwok = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeStrength(-2);
 
@@ -234,7 +311,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectGungan = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeIntelligence(-2);
 		$scope.changeCharisma(-2);
@@ -250,7 +327,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectIthorian = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeWisdom(2);
 		$scope.changeCharisma(2);
 		$scope.changeDexterity(-2);
@@ -266,7 +343,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectGamorrean = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeStrength(2);
 		$scope.changeDexterity(-2);
 		$scope.changeIntelligence(-2);
@@ -283,7 +360,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectKelDor = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeWisdom(2);
 		$scope.changeConstitution(-2);
@@ -300,7 +377,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectMonCalamari = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeIntelligence(2);
 		$scope.changeWisdom(2);
 		$scope.changeConstitution(-2);
@@ -319,7 +396,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectQuarren = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeWisdom(-2);
 		$scope.changeCharisma(-2);
 		$scope.changeConstitution(2);
@@ -338,7 +415,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectRodian = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeWisdom(-2);
 		$scope.changeCharisma(-2);
@@ -357,7 +434,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectSullustan = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeDexterity(2);
 		$scope.changeConstitution(-2);
 
@@ -372,7 +449,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectTrandoshan = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeStrength(2);
 		$scope.changeDexterity(-2);
 
@@ -387,7 +464,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectTwilek = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeCharisma(2);
 		$scope.changeWisdom(-2);
 
@@ -405,7 +482,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectZabrak = function () {
 
-		// NO MODIFIERS
+		// NO BONUSES
 
 		// SET DEFAULT LANGUAGES
 		$scope.speaksBasic = true;
@@ -419,7 +496,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 
 	$scope.selectWookiee = function () {
 
-		// APPLY MODIFIERS
+		// APPLY BONUSES
 		$scope.changeStrength(4);
 		$scope.changeConstitution(2);
 		$scope.changeDexterity(-2);
@@ -445,6 +522,14 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 		// SAVE SPECIES
 		character.species = $scope.selectedSpecies;
 
+		// SAVE BONUSES
+		character.stengthBonus = $scope.strengthBonus;
+		character.dexterityBonus = $scope.dexterityBonus;
+		character.wisdomBonus = $scope.wisdomBonus;
+		character.intelligenceBonus = $scope.intelligenceBonus;
+		character.charismaBonus = $scope.charismaBonus;
+		character.constitutionBonus = $scope.constitutionBonus;
+
 		// SAVE MODIFIERS
 		character.strengthModifier = $scope.strengthModifier;
 		character.dexterityModifier = $scope.dexterityModifier;
@@ -452,6 +537,7 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 		character.intelligenceModifier = $scope.intelligenceModifier;
 		character.wisdomModifier = $scope.wisdomModifier;
 		character.charismaModifier = $scope.charismaModifier;
+
 		character.languages = [];
 
 		// SAVE LANGUAGES
@@ -466,16 +552,31 @@ var starWarsSpeciesCtrl = function ($scope, character, $location) {
 			}
 		}
 
-		$location.path('/star-wars-d20/class');
+		localStorage.setItem("character", JSON.stringify(character));
+		$location.path("/star-wars-d20/class");
 	};
 
 
-	$scope.resetModifiers();
+	$scope.resetBonuses();
 	$scope.calculateTotals();
 
+	if($scope.selectedSpecies) {
+
+		$scope.speciesChanged();
+
+
+		
+		for (var i = 0; i < character.languages.length; i++) {
+			var lang = character.languages[i];
+			$scope["speaks" + lang.name] = lang.speaks;
+			$scope["reads" + lang.name] = lang.reads;
+			$scope["writes" + lang.name] = lang.writes;
+		}
+		
+	}
 
 };
 
-starWarsSpeciesCtrl.$inject = ['$scope', 'character', '$location'];
-angular.module('charGen').controller('starWarsSpeciesCtrl', starWarsSpeciesCtrl);
+starWarsSpeciesCtrl.$inject = ["$scope", "$location", "abilityService"];
+angular.module("charGen").controller("starWarsSpeciesCtrl", starWarsSpeciesCtrl);
 

@@ -2,7 +2,7 @@
 	<li><a href="/">Home</a></li>
 	<li><a href="#">Star Wars</a></li>
 	<li><a href="/star-wars-d20/">Start</a></li>
-	<li><a href="/star-wars-d20/ability">Ability Scores</a></li>
+	<li><a href="/star-wars-d20/abilities">Ability Scores</a></li>
 	<li class="active"><a href="#">Species</a></li>
 </ul>
 
@@ -151,6 +151,7 @@
 					<tr>
 						<th>Ability</th>
 						<th>Base Score</th>
+						<th>Bonus</th>
 						<th>Modifier</th>
 						<th>Total</th>
 					</tr>
@@ -160,8 +161,12 @@
 						<td>Strength</td>
 						<td class="text-center">{{strength}}</td>
 						<td class="text-center" style="position:relative;">
+							{{strengthBonus}}
+							<i ng-class="strengthClass" style=" position:absolute; right:1px; top:10px;"></i>
+						</td>
+						<td class="text-center">
 							{{strengthModifier}}
-							<i ng-class="strengthClass" style=" position:absolute; right:1px; top:10px;" ></i>
+							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{strengthTotal}}</td>
 					</tr>
@@ -169,8 +174,12 @@
 						<td>Dexterity</td>
 						<td class="text-center">{{dexterity}}</td>
 						<td class="text-center" style="position:relative;">
+							{{dexterityBonus}}
+							<i ng-class="dexterityClass" style="position:absolute; right:1px; top:10px;"></i>
+						</td>
+						<td class="text-center" style="position: relative;">
 							{{dexterityModifier}}
-							<i ng-class="dexterityClass" style="position:absolute; right:1px; top:10px;" ></i>
+							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{dexterityTotal}}</td>
 					</tr>
@@ -178,17 +187,22 @@
 						<td>Constitution</td>
 						<td class="text-center">{{constitution}}</td>
 						<td class="text-center" style="position:relative;">
-							{{constitutionModifier}}
-							<i ng-class="constitutionClass" style="position:absolute; right:1px; top:10px;" ></i>
+							{{constitutionBonus}}
+							<i ng-class="constitutionClass" style="position: absolute; right: 1px; top: 10px;"></i>
 						</td>
+						<td class="text-center" style="position:relative;">{{constitutionModifier}}</td>
 						<td class="text-center">{{constitutionTotal}}</td>
 					</tr>
 					<tr>
 						<td>Intelligence</td>
 						<td class="text-center">{{intelligence}}</td>
 						<td class="text-center" style="position:relative;">
+							{{intelligenceBonus}}
+							<i ng-class="intelligenceClass" style="position:absolute; right:1px; top:10px;"></i>
+						</td>
+						<td class="text-center" style="position: relative;">
 							{{intelligenceModifier}}
-							<i ng-class="intelligenceClass" style="position:absolute; right:1px; top:10px;" ></i>
+							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{intelligenceTotal}}</td>
 					</tr>
@@ -196,8 +210,12 @@
 						<td>Wisdom</td>
 						<td class="text-center">{{wisdom}}</td>
 						<td class="text-center" style="position:relative;">
+							{{wisdomBonus}}
+							<i ng-class="wisdomClass" style="position:absolute; right:1px; top:10px;"></i>
+						</td>
+						<td class="text-center" style="position: relative;">
 							{{wisdomModifier}}
-							<i ng-class="wisdomClass" style="position:absolute; right:1px; top:10px;" ></i>
+							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{wisdomTotal}}</td>
 					</tr>
@@ -205,8 +223,12 @@
 						<td>Charisma</td>
 						<td class="text-center">{{charisma}}</td>
 						<td class="text-center" style="position:relative;">
+							{{charismaBonus}}
+							<i ng-class="charismaClass" style="position:absolute; right:1px; top:10px;"></i>
+						</td>
+						<td class="text-center" style="position: relative;">
 							{{charismaModifier}}
-							<i ng-class="charismaClass" style="position:absolute; right:1px; top:10px;" ></i>
+							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{charismaTotal}}</td>
 					</tr>

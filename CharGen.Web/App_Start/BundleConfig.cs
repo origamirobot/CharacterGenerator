@@ -19,7 +19,7 @@ namespace CharGen.Web
 				"~/App/libs/angular/angular-route.js",
 				"~/App/libs/angular/angular-messages.js",
 				"~/App/libs/angular/angular-sanitize.js",
-				"~/App/libs/ng-storage/ng-storage.js"
+				"~/App/libs/ngstorage/ngStorage.js"
 			));
 			bundles.Add(new ScriptBundle("~/js/modernizr").Include("~/App/libs/modernizr/modernizr-2.8.3.js"));
 			bundles.Add(new ScriptBundle("~/js/angularui").Include("~/App/libs/select2/select2.min.js", "~/App/libs/angular-ui-select2/src/select2.js"));

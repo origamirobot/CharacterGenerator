@@ -1,5 +1,5 @@
 ﻿
-var starWarsSkillsCtrl = function ($scope, character, $location) {
+var starWarsSkillsCtrl = function ($scope, $location) {
 
 	$scope.totalSkills = 0;
 	$scope.skillsLeft = 0;
@@ -11,98 +11,98 @@ var starWarsSkillsCtrl = function ($scope, character, $location) {
 
 
 	$scope.jediSkills = [
-		{ name: 'Acrobatics', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Endurance', value: false, ability: 'CON', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Initiative', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Knowledge (Bureaucracy)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Galactic Lore)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Life Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Physical Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Social Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Tactics)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Technology)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Pilot', ability: 'DEX', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Use The Force', ability: 'CHA', value: false, useUntrained: true, armorCheckPenalty: false }
+		{ name: "Acrobatics", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Endurance", value: false, ability: "CON", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Initiative", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Knowledge (Bureaucracy)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Galactic Lore)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Life Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Physical Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Social Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Tactics)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Technology)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Pilot", ability: "DEX", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Use The Force", ability: "CHA", value: false, useUntrained: true, armorCheckPenalty: false }
 	];
 
 	$scope.nobleSkills = [
-		{ name: 'Deception', value: false, ability: 'CHA', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Gather Information', value: false, ability: 'CHA', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Initiative', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Knowledge (Bureaucracy)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Galactic Lore)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Life Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Physical Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Social Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Tactics)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Technology)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Mechanics', value: false, ability: 'INT', useUntrained: false, armorCheckPenalty: false },
-		{ name: 'Perception', value: false, ability: 'WIS', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Persuasion', value: false, ability: 'CHA', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Pilot', ability: 'DEX', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Stealth', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Use Computer', value: false, ability: 'INT', useUntrained: true, armorCheckPenalty: false }
+		{ name: "Deception", value: false, ability: "CHA", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Gather Information", value: false, ability: "CHA", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Initiative", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Knowledge (Bureaucracy)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Galactic Lore)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Life Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Physical Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Social Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Tactics)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Technology)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Mechanics", value: false, ability: "INT", useUntrained: false, armorCheckPenalty: false },
+		{ name: "Perception", value: false, ability: "WIS", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Persuasion", value: false, ability: "CHA", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Pilot", ability: "DEX", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Stealth", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Use Computer", value: false, ability: "INT", useUntrained: true, armorCheckPenalty: false }
 	];
 
 	$scope.scoutSkills = [
-		{ name: 'Climb', value: false, ability: 'STR', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Endurance', value: false, ability: 'CON', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Initiative', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Jump', value: false, ability: 'STR', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Knowledge (Bureaucracy)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Galactic Lore)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Life Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Physical Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Social Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Tactics)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Technology)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Mechanics', value: false, ability: 'INT', useUntrained: false, armorCheckPenalty: false },
-		{ name: 'Perception', value: false, ability: 'WIS', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Pilot', ability: 'DEX', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Ride', value: false },
-		{ name: 'Stealth', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Survival', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Swim', value: false, ability: 'STR', useUntrained: true, armorCheckPenalty: true },
+		{ name: "Climb", value: false, ability: "STR", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Endurance", value: false, ability: "CON", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Initiative", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Jump", value: false, ability: "STR", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Knowledge (Bureaucracy)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Galactic Lore)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Life Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Physical Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Social Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Tactics)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Technology)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Mechanics", value: false, ability: "INT", useUntrained: false, armorCheckPenalty: false },
+		{ name: "Perception", value: false, ability: "WIS", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Pilot", ability: "DEX", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Ride", value: false },
+		{ name: "Stealth", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Survival", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Swim", value: false, ability: "STR", useUntrained: true, armorCheckPenalty: true },
 	];
 
 	$scope.soldierSkills = [
-		{ name: 'Climb', value: false, ability: 'STR', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Endurance', value: false, ability: 'CON', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Initiative', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Jump', value: false, ability: 'STR', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Knowledge (Bureaucracy)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Galactic Lore)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Life Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Physical Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Social Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Tactics)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Technology)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Mechanics', value: false, ability: 'INT', useUntrained: false, armorCheckPenalty: false },
-		{ name: 'Perception', value: false, ability: 'WIS', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Pilot', ability: 'DEX', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Swim', value: false, ability: 'STR', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Treat Injury', value: false, ability: 'WIS', useUntrained: true, armorCheckPenalty: false},
-		{ name: 'Use Computer', value: false, ability: 'INT', useUntrained: true, armorCheckPenalty: false }
+		{ name: "Climb", value: false, ability: "STR", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Endurance", value: false, ability: "CON", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Initiative", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Jump", value: false, ability: "STR", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Knowledge (Bureaucracy)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Galactic Lore)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Life Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Physical Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Social Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Tactics)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Technology)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Mechanics", value: false, ability: "INT", useUntrained: false, armorCheckPenalty: false },
+		{ name: "Perception", value: false, ability: "WIS", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Pilot", ability: "DEX", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Swim", value: false, ability: "STR", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Treat Injury", value: false, ability: "WIS", useUntrained: true, armorCheckPenalty: false},
+		{ name: "Use Computer", value: false, ability: "INT", useUntrained: true, armorCheckPenalty: false }
 	];
 
 	$scope.scoundrelSkills = [
-		{ name: 'Acrobatics', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Deception', value: false, ability: 'CHA', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Gather Information', value: false, ability: 'CHA', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Initiative', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Knowledge (Bureaucracy)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Galactic Lore)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Life Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Physical Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Social Sciences)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Tactics)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Knowledge (Technology)', ability: 'INT', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Mechanics', value: false, ability: 'INT', useUntrained: false, armorCheckPenalty: false },
-		{ name: 'Perception', value: false, ability: 'WIS', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Persuasion', value: false, ability: 'CHA', useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Pilot', ability: 'DEX', value: false, useUntrained: true, armorCheckPenalty: false },
-		{ name: 'Stealth', value: false, ability: 'DEX', useUntrained: true, armorCheckPenalty: true },
-		{ name: 'Use Computer', value: false, ability: 'INT', useUntrained: true, armorCheckPenalty: false }
+		{ name: "Acrobatics", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Deception", value: false, ability: "CHA", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Gather Information", value: false, ability: "CHA", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Initiative", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Knowledge (Bureaucracy)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Galactic Lore)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Life Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Physical Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Social Sciences)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Tactics)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Knowledge (Technology)", ability: "INT", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Mechanics", value: false, ability: "INT", useUntrained: false, armorCheckPenalty: false },
+		{ name: "Perception", value: false, ability: "WIS", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Persuasion", value: false, ability: "CHA", useUntrained: true, armorCheckPenalty: false },
+		{ name: "Pilot", ability: "DEX", value: false, useUntrained: true, armorCheckPenalty: false },
+		{ name: "Stealth", value: false, ability: "DEX", useUntrained: true, armorCheckPenalty: true },
+		{ name: "Use Computer", value: false, ability: "INT", useUntrained: true, armorCheckPenalty: false }
 	];
 
 
@@ -228,13 +228,13 @@ var starWarsSkillsCtrl = function ($scope, character, $location) {
 		}
 
 
-		$location.path('/star-wars-d20/feats');
+		$location.path("/star-wars-d20/feats");
 	};
 
 
 	$scope.activateCorrectSkills();
 };
 
-starWarsSkillsCtrl.$inject = ['$scope', 'character', '$location'];
-angular.module('charGen').controller('starWarsSkillsCtrl', starWarsSkillsCtrl);
+starWarsSkillsCtrl.$inject = ["$scope", "$location"];
+angular.module("charGen").controller("starWarsSkillsCtrl", starWarsSkillsCtrl);
 

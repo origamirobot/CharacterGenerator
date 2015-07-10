@@ -126,8 +126,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AbilitiesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SpeciesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,13 +138,12 @@
   <ItemGroup>
     <Content Include="App\css\app.css" />
     <Content Include="App\html\index.html" />
-    <Content Include="App\html\star-wars\05-combat.html" />
+    <Content Include="App\html\star-wars\00-basic.html" />
+    <Content Include="App\html\star-wars\04-skills.html" />
+    <Content Include="App\html\star-wars\05-feats.html" />
+    <Content Include="App\html\star-wars\06-character.html" />
     <Content Include="App\html\star-wars\10-finish.html" />
     <Content Include="App\html\star-wars\09-gear.html" />
-    <Content Include="App\html\star-wars\08-talent.html" />
-    <Content Include="App\html\star-wars\07-feats.html" />
-    <Content Include="App\html\star-wars\06-skills.html" />
-    <Content Include="App\html\star-wars\04-assign.html" />
     <Content Include="App\html\star-wars\03-class.html" />
     <Content Include="App\html\star-wars\02-species.html" />
     <Content Include="App\html\star-wars\01-abilities.html" />
@@ -151,8 +152,14 @@
     <Content Include="App\js\controllers\homeCtrl.js" />
     <Content Include="App\js\controllers\mainMenuCtrl.js" />
     <Content Include="App\js\controllers\sideMenuCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsBasicCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsAbilitiesCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsCharacterCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsClassCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsFeatsCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsSkillsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsSpeciesCtrl.js" />
+    <Content Include="App\js\services\abilityService.js" />
     <Content Include="App\js\services\serviceHelper.js" />
     <Content Include="App\js\services\raceService.js" />
     <Content Include="App\libs\angular-ui-select2\.gitignore" />
@@ -2664,6 +2671,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CharGen.Data\CharGen.Data.csproj">
+      <Project>{659C6309-15E0-4CF0-B2A8-63BE59AFD1B8}</Project>
+      <Name>CharGen.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

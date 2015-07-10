@@ -1,28 +1,31 @@
 ﻿
-var starWarsAbilitiesCtrl = function ($scope, character, $location) {
+var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 
+	var character = JSON.parse(localStorage.getItem("character"));
 
-	$scope.selectedGenMethod = "";
+	$scope.selectedGenMethod = character.generationMethod;
 	$scope.genMethodDescription = "";
 	$scope.showGenDescription = false;
 	$scope.showAbilityForm = false;
 
 	$scope.plannedDefaultValue = 8;
 
-	$scope.strength = 0;
-	$scope.dexterity = 0;
-	$scope.constitution = 0;
-	$scope.intelligence = 0;
-	$scope.wisdom = 0;
-	$scope.charisma = 0;
+	$scope.strength = character.strength;
+	$scope.dexterity = character.dexterity;
+	$scope.constitution = character.constitution;
+	$scope.intelligence = character.intelligence;
+	$scope.wisdom = character.wisdom;
+	$scope.charisma = character.charisma;
+
 
 	$scope.defaultAmountToSpend = 25;
 	$scope.amountLeftToSpend = 0;
 	$scope.showAmountToSpend = false;
-	$scope.amountLeftToSpendClass = 'text-success';
+	$scope.amountLeftToSpendClass = "text-success";
 	$scope.abilitiesReadOnly = false;
 
 	$scope.genMethodChanged = function () {
+		console.log('Generation method changed to ' + $scope.selectedGenMethod);
 		$scope.showAbilityForm = false;
 		if ($scope.selectedGenMethod) {
 			switch ($scope.selectedGenMethod) {
@@ -94,23 +97,32 @@ var starWarsAbilitiesCtrl = function ($scope, character, $location) {
 			return;
 
 
-		character.sex = $scope.sex;
-		character.characterName = $scope.characterName;
-		character.playerName = $scope.playerName;
-		character.height = $scope.height;
-		character.weight = $scope.weight;
-
 		character.strength = $scope.strength;
 		character.dexterity = $scope.dexterity;
 		character.constitution = $scope.constitution;
 		character.intelligence = $scope.intelligence;
 		character.wisdom = $scope.wisdom;
 		character.charisma = $scope.charisma;
-		$location.path('/star-wars-d20/species');
+
+		localStorage.setItem("character", JSON.stringify(character));
+		$location.path("/star-wars-d20/species");
 	};
+
+
+	if ($scope.selectedGenMethod) {
+		$scope.genMethodChanged();
+		$scope.acceptMethod();
+		$scope.strength = character.strength;
+		$scope.dexterity = character.dexterity;
+		$scope.constitution = character.constitution;
+		$scope.intelligence = character.intelligence;
+		$scope.wisdom = character.wisdom;
+		$scope.charisma = character.charisma;
+		$scope.abilityChanged();
+	}
 
 };
 
-starWarsAbilitiesCtrl.$inject = ['$scope', 'character','$location'];
-angular.module('charGen').controller('starWarsAbilitiesCtrl', starWarsAbilitiesCtrl);
+starWarsAbilitiesCtrl.$inject = ["$scope", "$location", "abilityService"];
+angular.module("charGen").controller("starWarsAbilitiesCtrl", starWarsAbilitiesCtrl);
 

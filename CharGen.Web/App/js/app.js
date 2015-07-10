@@ -1,22 +1,22 @@
 ﻿
 
 
-angular.module('charGen', []);
+angular.module("charGen", []);
 
 
-var charGenApp = angular.module('charGenApp', ["ngResource", "ngMessages", "ngRoute", "ngSanitize", "ngAnimate", "ngStorage", "ui.select2", "ui.bootstrap", "charGen"])
+var charGenApp = angular.module("charGenApp", ["ngResource", "ngMessages", "ngRoute", "ngSanitize", "ngAnimate", "ngStorage", "ui.select2", "ui.bootstrap", "charGen"])
 	.config(function ($routeProvider) {
 		$routeProvider
-			.when('/', { templateUrl: '/app/html/index.html', controller: 'homeCtrl' })
-			.when('/star-wars-d20/', { templateUrl: '/app/html/star-wars/01-abilities.html', controller: 'starWarsAbilitiesCtrl' })
-			.when('/star-wars-d20/abilities', { templateUrl: '/app/html/star-wars/01-abilities.html', controller: 'starWarsAbilitiesCtrl' })
-			.when('/star-wars-d20/species', { templateUrl: '/app/html/star-wars/02-species.html', controller: 'starWarsSpeciesCtrl' })
-			.when('/star-wars-d20/class', { templateUrl: '/app/html/star-wars/03-class.html', controller: 'starWarsClassCtrl' })
-			.when('/star-wars-d20/skills', { templateUrl: '/app/html/star-wars/04-skills.html', controller: 'starWarsSkillsCtrl' })
-			.when('/star-wars-d20/feats', { templateUrl: '/app/html/star-wars/05-feats.html', controller: 'starWarsFeatsCtrl' })
-			.when('/star-wars-d20/character', { templateUrl: '/app/html/star-wars/06-character.html', controller: 'starWarsCharacterCtrl' })
-			.when('/star-wars-d20/gear', { templateUrl: '/app/html/star-wars/09-gear.html', controller: 'starWarsGearCtrl' })
-			.when('/star-wars-d20/finish', { templateUrl: '/app/html/star-wars/10-finish.html', controller: 'starWarsFinishCtrl' });
+			.when("/", { templateUrl: "/app/html/index.html", controller: "homeCtrl" })
+			.when("/star-wars-d20/", { templateUrl: "/app/html/star-wars/00-basic.html", controller: "starWarsBasicCtrl" })
+			.when("/star-wars-d20/abilities", { templateUrl: "/app/html/star-wars/01-abilities.html", controller: "starWarsAbilitiesCtrl" })
+			.when("/star-wars-d20/species", { templateUrl: "/app/html/star-wars/02-species.html", controller: "starWarsSpeciesCtrl" })
+			.when("/star-wars-d20/class", { templateUrl: "/app/html/star-wars/03-class.html", controller: "starWarsClassCtrl" })
+			.when("/star-wars-d20/skills", { templateUrl: "/app/html/star-wars/04-skills.html", controller: "starWarsSkillsCtrl" })
+			.when("/star-wars-d20/feats", { templateUrl: "/app/html/star-wars/05-feats.html", controller: "starWarsFeatsCtrl" })
+			.when("/star-wars-d20/character", { templateUrl: "/app/html/star-wars/06-character.html", controller: "starWarsCharacterCtrl" })
+			.when("/star-wars-d20/gear", { templateUrl: "/app/html/star-wars/09-gear.html", controller: "starWarsGearCtrl" })
+			.when("/star-wars-d20/finish", { templateUrl: "/app/html/star-wars/10-finish.html", controller: "starWarsFinishCtrl" });
 	});
 
 
@@ -55,9 +55,9 @@ charGenApp.run(function ($rootScope, $templateCache, $log) {
 
 charGenApp.constant("character", {
 
-	generationMethod: '',
-	species: '',
-	'class': '',
+	generationMethod: "",
+	species: "",
+	'class': "",
 	strength: 0,
 	dexterity: 0,
 	constitution: 0,

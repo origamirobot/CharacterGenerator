@@ -1,14 +1,15 @@
 ﻿
-var starWarsCharacterCtrl = function ($scope, character, $location) {
+var starWarsCharacterCtrl = function ($scope, $location) {
 
+	var character = JSON.parse(localStorage.getItem("character"));
 	$scope.character = character;
 
 
-	console.log(character);
+	
 
 
 };
 
-starWarsCharacterCtrl.$inject = ['$scope', 'character', '$location'];
+starWarsCharacterCtrl.$inject = ['$scope', '$location'];
 angular.module('charGen').controller('starWarsCharacterCtrl', starWarsCharacterCtrl);
 
