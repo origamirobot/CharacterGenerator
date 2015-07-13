@@ -1876,6 +1876,10 @@
     <Content Include="App\libs\slimscroll\examples\style.css" />
     <Content Include="App\libs\slimscroll\jquery.slimscroll.js" />
     <Content Include="App\libs\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="App_Data\CharGenDB.mdf" />
+    <Content Include="App_Data\CharGenDB_log.ldf">
+      <DependentUpon>CharGenDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="App\libs\angular-ui-select2\.bower.json" />
     <Content Include="App\libs\angular-ui-select2\.bowerrc" />
@@ -2682,7 +2686,6 @@
     <Folder Include="App\libs\angular-ui\build\" />
     <Folder Include="App\libs\angular_ui\" />
     <Folder Include="App\libs\images-loaded\" />
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
