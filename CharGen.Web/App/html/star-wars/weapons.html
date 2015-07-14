@@ -1,4 +1,4 @@
-﻿<ul class="breadcrumb breadcrumb-page">
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
 	<li><a href="/">Home</a></li>
 	<li><a href="#">Star Wars</a></li>
 	<li class="active"><a href="#">Weapons</a></li>
@@ -9,4 +9,52 @@
 		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Weapons
 	</h1>
 </div>
+
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Weapons List</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr role="row">
+				<th>Name</th>
+				<th>Cost</th>
+				<th>Category</th>
+				<th>Type</th>
+				<th>Size</th>
+				<th>Weight</th>
+				<th>Damage</th>
+				<th>Critical</th>
+				<th>Range</th>
+				<th>Multifire</th>
+				<th>Autofire</th>
+				<th>Stun</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="weapon in weapons">
+				<td>{{weapon.Name}}</td>
+				<td>{{weapon.Cost}}c</td>
+				<td>{{weapon.Category.Name}}</td>
+				<td>{{weapon.Type.Name}}</td>
+				<td>{{weapon.Size}}</td>
+				<td>{{weapon.Weight}}kg</td>
+				<td>{{weapon.Damage}}</td>
+				<td>{{weapon.Critical}}</td>
+				<td>{{weapon.RangeIncrement}}</td>
+				<td class="text-center">
+					<i class="fa fa-ban" ng-hide="weapon.HasMultifire"></i>
+					<i class="fa fa-check" ng-show="weapon.HasMultifire"></i>
+				</td>
+				<td class="text-center">
+					<i class="fa fa-ban" ng-hide="weapon.HasAutofire"></i>
+					<i class="fa fa-check" ng-show="weapon.HasAutofire"></i>
+				</td>
+				<td>{{weapon.StunFort}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
 

@@ -8,9 +8,12 @@ var charGenApp = angular.module("charGenApp", ["ngResource", "ngMessages", "ngRo
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when("/", { templateUrl: "/app/html/index.html", controller: "homeCtrl" })
-			.when("/star-wars-d20/", { templateUrl: "/app/html/star-wars/00-basic.html", controller: "starWarsBasicCtrl" })
+			.when("/star-wars-d20/basic", { templateUrl: "/app/html/star-wars/basic.html", controller: "starWarsBasicCtrl" })
+			.when("/star-wars-d20/armor", { templateUrl: "/app/html/star-wars/armor.html", controller: "starWarsArmorCtrl" })
+			.when("/star-wars-d20/armor/add", { templateUrl: "/app/html/star-wars/armor-add.html", controller: "starWarsArmorAddCtrl" })
 			.when("/star-wars-d20/weapons", { templateUrl: "/app/html/star-wars/weapons.html", controller: "starWarsWeaponsCtrl" })
 			.when("/star-wars-d20/equipment", { templateUrl: "/app/html/star-wars/equipment.html", controller: "starWarsEquipmentCtrl" })
+			.when("/star-wars-d20/equipment/add", { templateUrl: "/app/html/star-wars/equipment-add.html", controller: "starWarsEquipmentAddCtrl" })
 			.when("/star-wars-d20/services", { templateUrl: "/app/html/star-wars/services.html", controller: "starWarsServicesCtrl" })
 			.when("/star-wars-d20/abilities", { templateUrl: "/app/html/star-wars/abilities.html", controller: "starWarsAbilitiesCtrl" })
 			.when("/star-wars-d20/species", { templateUrl: "/app/html/star-wars/species.html", controller: "starWarsSpeciesCtrl" })

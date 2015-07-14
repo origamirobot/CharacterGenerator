@@ -1,4 +1,4 @@
-﻿<ul class="breadcrumb breadcrumb-page">
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
 	<li><a href="/">Home</a></li>
 	<li><a href="#">Star Wars</a></li>
 	<li class="active"><a href="#">Equipment</a></li>
@@ -8,5 +8,33 @@
 	<h1>
 		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Equipment
 	</h1>
+	<div class="pull-right">
+		<a href="/star-wars-d20/equipment/add" class="btn btn-default"><i class="fa fa-plus"></i> Add Equipment</a>
+	</div>
+</div>
+
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Equipment List</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr role="row">
+				<th>Name</th>
+				<th>Cost</th>
+				<th>Weight</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in equipment">
+				<td>{{item.Name}}</td>
+				<td>{{item.Cost}}c</td>
+				<td>{{item.Weight}} kg</td>
+				<td>{{item.Type.Name}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 

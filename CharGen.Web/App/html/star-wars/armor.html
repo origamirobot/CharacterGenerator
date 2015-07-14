@@ -1,0 +1,58 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li class="active"><a href="#">Armor</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Armor
+	</h1>
+	<div class="pull-right">
+		<a class="btn btn-default" href="/star-wars-d20/armor/add"><i class="fa fa-plus"></i> Add Armor</a>
+	</div>
+</div>
+
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Armor List</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr role="row">
+				<th>Name</th>
+				<th>Cost</th>
+				<th>Availability</th>
+				<th>Type</th>
+				<th>ReflexBonus</th>
+				<th>Max Dex. Bonus</th>
+				<th>Speed (4sq)</th>
+				<th>Speed (6sq)</th>
+				<th>Weight</th>
+				<th>Rare?</th>
+				<th>Fort. Bonus</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in armor">
+				<td>{{item.Name}}</td>
+				<td>{{item.Cost}}c</td>
+				<td>{{item.Availability.Name}}</td>
+				<td>{{item.Type.Name}}</td>
+				<td>{{item.ReflexBonus}}</td>
+				<td>{{item.MaxDexterityBonus}}</td>
+				<td>{{item.SpeedReduction4}}</td>
+				<td>{{item.SpeedReduction6}}</td>
+				<td>{{item.Weight}}kg</td>
+				<td class="text-center">
+					<i class="fa fa-ban" ng-hide="item.IsRare"></i>
+					<i class="fa fa-check" ng-show="item.IsRare"></i>
+				</td>
+				<td>{{item.FortitudeBonus}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+

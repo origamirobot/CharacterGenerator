@@ -1,0 +1,103 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li><a href="/star-wars-d20/armor">Armor</a></li>
+	<li class="active"><a href="#">Add</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Add Armor
+	</h1>
+</div>
+
+
+<div class="panel form-horizontal">
+	<div class="panel-heading">
+		<span class="panel-title">Add Armor</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Armor Name" ng-model="armor.Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Cost</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Cost" ng-model="armor.Cost">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Reflex Bonus</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Reflex Bonus" ng-model="armor.ReflexBonus">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Max Dex. Bonus</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Maximum Dexterity Bonus" ng-model="armor.MaxDexterityBonus">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Fortitude Bonus</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Fortitude Bonus" ng-model="armor.FortitudeBonus">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Speed (4sq)</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Speed Reduction (4 square)" ng-model="armor.SpeedReduction4">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Speed (6sq)</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Speed Reduction (6 square)" ng-model="armor.SpeedReduction6">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Weight</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Weight in Kilograms" ng-model="armor.Weight">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Rare</label>
+			<div class="col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="px"> <span class="lbl">Armor is Rare</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Availability</label>
+			<div class="col-sm-10">
+				<select ng-model="armor.AvailabilityId" class="form-control">
+					<option ng-repeat="avail in availabilities" value="{{avail.Id}}">{{avail.Name}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Type</label>
+			<div class="col-sm-10">
+				<select ng-model="armor.TypeId" class="form-control">
+					<option ng-repeat="type in types" value="{{type.Id}}">{{type.Name}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group" style="margin-bottom: 0;">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-primary" ng-click="save()">Save</button>
+				<a href="/star-wars-d20/armor" class="btn btn-default" >Cancel</a>
+				<span class="text-success" ng-show="showSuccessMessage">{{successMessage}}</span>
+				<span class="text-danger" ng-show="showErrorMessage">{{errorMessage}}</span>
+			</div>
+		</div>
+	</div>
+</div>

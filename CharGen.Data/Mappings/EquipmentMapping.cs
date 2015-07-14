@@ -25,6 +25,7 @@ namespace CharGen.Data.Mappings
 			Map(x => x.Name);
 			Map(x => x.Cost);
 			Map(x => x.Weight);
+			References(x => x.Type, "TypeId");
 		}
 
 	}

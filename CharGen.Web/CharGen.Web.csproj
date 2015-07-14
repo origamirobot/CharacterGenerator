@@ -41,6 +41,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
@@ -146,9 +150,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AbilitiesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ArmorController.cs" />
     <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SpeciesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,10 +165,13 @@
   <ItemGroup>
     <Content Include="App\css\app.css" />
     <Content Include="App\html\index.html" />
+    <Content Include="App\html\star-wars\armor-add.html" />
     <Content Include="App\html\star-wars\basic.html" />
+    <Content Include="App\html\star-wars\equipment-add.html" />
     <Content Include="App\html\star-wars\skills.html" />
     <Content Include="App\html\star-wars\feats.html" />
     <Content Include="App\html\star-wars\services.html" />
+    <Content Include="App\html\star-wars\armor.html" />
     <Content Include="App\html\star-wars\weapons.html" />
     <Content Include="App\html\star-wars\equipment.html" />
     <Content Include="App\html\star-wars\character.html" />
@@ -175,8 +185,11 @@
     <Content Include="App\js\controllers\homeCtrl.js" />
     <Content Include="App\js\controllers\mainMenuCtrl.js" />
     <Content Include="App\js\controllers\sideMenuCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsArmorAddCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsEquipmentAddCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsServicesCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsEquipmentCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsArmorCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsWeaponsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsBasicCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsAbilitiesCtrl.js" />
@@ -185,7 +198,10 @@
     <Content Include="App\js\controllers\star-wars\starWarsFeatsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsSkillsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsSpeciesCtrl.js" />
-    <Content Include="App\js\services\gearService.js" />
+    <Content Include="App\js\services\armorService.js" />
+    <Content Include="App\js\services\serviceService.js" />
+    <Content Include="App\js\services\weaponService.js" />
+    <Content Include="App\js\services\equipmentService.js" />
     <Content Include="App\js\services\abilityService.js" />
     <Content Include="App\js\services\serviceHelper.js" />
     <Content Include="App\js\services\raceService.js" />
@@ -1888,10 +1904,6 @@
     <Content Include="App\libs\slimscroll\examples\style.css" />
     <Content Include="App\libs\slimscroll\jquery.slimscroll.js" />
     <Content Include="App\libs\slimscroll\jquery.slimscroll.min.js" />
-    <Content Include="App_Data\CharGenDB.mdf" />
-    <Content Include="App_Data\CharGenDB_log.ldf">
-      <DependentUpon>CharGenDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="App\libs\angular-ui-select2\.bower.json" />
     <Content Include="App\libs\angular-ui-select2\.bowerrc" />
@@ -2691,9 +2703,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Left.cshtml" />
     <Content Include="Views\Shared\_Top.cshtml" />
-    <None Include="CharGenDB.s3db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="App_Data\CharGenDB.s3db" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\js\directives\" />

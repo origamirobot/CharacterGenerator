@@ -1,15 +1,7 @@
-﻿angular.module("charGen").factory("gearService", function ($http, $q) {
+﻿angular.module("charGen").factory("equipmentService", function ($http, $q) {
 	return {
 
-		listWeapons: function (score) {
-			var deferred = $q.defer();
-			$http({ method: "GET", url: "/weapon/list" }).
-				success(function (data, status, headers, config) { deferred.resolve(data); }).
-				error(function (data, status, headers, config) { deferred.reject(status); });
-			return deferred.promise;
-		},
-
-		listEquipment: function (str, dex, con, inte, wis, cha) {
+		list: function () {
 			var deferred = $q.defer();
 			$http({ method: "GET", url: "/equipment/list" }).
 				success(function (data, status, headers, config) { deferred.resolve(data); }).
@@ -17,14 +9,21 @@
 			return deferred.promise;
 		},
 
-		listServices: function (str, dex, con, inte, wis, cha) {
+		listTypes: function () {
 			var deferred = $q.defer();
-			$http({ method: "GET", url: "/services/list" }).
+			$http({ method: "GET", url: "/equipment/types" }).
 				success(function (data, status, headers, config) { deferred.resolve(data); }).
 				error(function (data, status, headers, config) { deferred.reject(status); });
 			return deferred.promise;
 		},
 
+		save: function (equipment) {
+			var deferred = $q.defer();
+			$http({ method: 'POST', url: "/equipment/add", data: equipment, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).
+				success(function (data, status, headers, config) { deferred.resolve(data); }).
+				error(function (data, status, headers, config) { deferred.reject(status); });
+			return deferred.promise;
+		},
 
 	};
 });

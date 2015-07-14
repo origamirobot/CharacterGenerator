@@ -12,15 +12,15 @@ namespace CharGen.Data.Mappings
 	/// <summary>
 	/// 
 	/// </summary>
-	public class WeaponTypeMapping : ClassMap<WeaponType>
+	public class EquipmentTypeMapping : ClassMap<EquipmentType>
 	{
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="WeaponTypeMapping"/> class.
+		/// Initializes a new instance of the <see cref="EquipmentTypeMapping"/> class.
 		/// </summary>
-		public WeaponTypeMapping()
+		public EquipmentTypeMapping()
 		{
-			Table("WeaponType");
+			Table("EquipmentType");
 			Id(x => x.Id, "Id");
 			Map(x => x.Name);
 		}
@@ -28,3 +28,7 @@ namespace CharGen.Data.Mappings
 	}
 
 }
+
+
+
+

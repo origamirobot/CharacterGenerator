@@ -24,6 +24,15 @@ namespace Karaoke.Data.Configuration
 			Kernel.Bind<ISession>().ToMethod(x => x.Kernel.Get<ISessionFactory>().OpenSession()).InTransientScope();
 			Kernel.Bind<ISpeciesRepository>().To<SpeciesRepository>().InTransientScope();
 			Kernel.Bind<IWeaponRepository>().To<WeaponRepository>().InTransientScope();
+			Kernel.Bind<IServiceRepository>().To<ServiceRepository>().InTransientScope();
+			Kernel.Bind<IEquipmentRepository>().To<EquipmentRepository>().InTransientScope();
+			Kernel.Bind<IEquipmentTypeRepository>().To<EquipmentTypeRepository>().InTransientScope();
+			Kernel.Bind<IArmorRepository>().To<ArmorRepository>().InTransientScope();
+			Kernel.Bind<IArmorTypeRepository>().To<ArmorTypeRepository>().InTransientScope();
+			Kernel.Bind<IArmorAvailabilityRepository>().To<ArmorAvailabilityRepository>().InTransientScope();
+			Kernel.Bind<IAgeRepository>().To<AgeRepository>().InTransientScope();
+			Kernel.Bind<ISkillRepository>().To<SkillRepository>().InTransientScope();
+			Kernel.Bind<IClassRepository>().To<ClassRepository>().InTransientScope();
 		}
 
 	}

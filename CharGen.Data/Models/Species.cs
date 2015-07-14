@@ -13,6 +13,9 @@ namespace CharGen.Data.Models
 	public class Species : BaseObject
 	{
 
+		#region PUBLIC ACCESSORS
+
+
 		/// <summary>
 		/// Gets or sets the name.
 		/// </summary>
@@ -57,6 +60,26 @@ namespace CharGen.Data.Models
 		/// Gets or sets the charisma adjustment.
 		/// </summary>
 		public virtual Int32 CharismaAdjustment { get; set; }
+
+
+		#endregion PUBLIC ACCESSORS
+
+		#region PUBLIC METHODS
+
+
+		/// <summary>
+		/// Returns a <see cref="System.String" /> that represents this instance.
+		/// </summary>
+		/// <returns>
+		/// A <see cref="System.String" /> that represents this instance.
+		/// </returns>
+		public override string ToString()
+		{
+			return Name;
+		}
+
+
+		#endregion PUBLIC METHODS
 
 	}
 

@@ -1,4 +1,4 @@
-﻿<ul class="breadcrumb breadcrumb-page">
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
 	<li><a href="/">Home</a></li>
 	<li><a href="#">Star Wars</a></li>
 	<li class="active"><a href="#">Services</a></li>
@@ -8,5 +8,26 @@
 	<h1>
 		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Services
 	</h1>
+</div>
+
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Service List</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr role="row">
+				<th>Name</th>
+				<th>Cost</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="service in services">
+				<td>{{service.Name}}</td>
+				<td>{{service.Cost}}c</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 

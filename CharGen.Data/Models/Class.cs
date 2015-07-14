@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CharGen.Data.Models
 {
@@ -16,9 +13,22 @@ namespace CharGen.Data.Models
 		/// <summary>
 		/// Gets or sets the name.
 		/// </summary>
-		public String Name { get; set; }
+		public virtual String Name { get; set; }
 
+		/// <summary>
+		/// Gets or sets the description.
+		/// </summary>
+		public virtual String Description { get; set; }
 
+		/// <summary>
+		/// Gets or sets the skills.
+		/// </summary>
+		public virtual IList<Skill> Skills { get; set; }
+
+		/// <summary>
+		/// Gets or sets the number of trained skills this class starts with.
+		/// </summary>
+		public virtual Int32 TrainedSkills { get; set; }
 
 	}
 

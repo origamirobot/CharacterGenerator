@@ -28,6 +28,11 @@ namespace CharGen.Data.Models
 		/// </summary>
 		public virtual Decimal Weight { get; set; }
 
+		/// <summary>
+		/// Gets or sets the type.
+		/// </summary>
+		public virtual EquipmentType Type { get; set; }
+
 	}
 
 }

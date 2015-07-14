@@ -1,6 +1,8 @@
 ﻿
 var starWarsSkillsCtrl = function ($scope, $location) {
 
+	var character = JSON.parse(localStorage.getItem('character'));
+
 	$scope.totalSkills = 0;
 	$scope.skillsLeft = 0;
 	$scope.showJediSkills = false;
