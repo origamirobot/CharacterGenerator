@@ -19,11 +19,11 @@ namespace Karaoke.Data.Configuration
 		public override void Load()
 		{
 			Kernel.Bind<IDataConfiguration>().To<DefaultDataConfiguration>().InSingletonScope();
-			Kernel.Bind<INHibernateConfiguration>().To<DefaultNHibernateConfig>().InSingletonScope();
+			Kernel.Bind<INHibernateConfiguration>().To<SQLiteNHibernateConfig>().InSingletonScope();
 			Kernel.Bind<ISessionFactory>().ToConstant(Kernel.Get<INHibernateConfiguration>().GetConfiguration().BuildSessionFactory());
 			Kernel.Bind<ISession>().ToMethod(x => x.Kernel.Get<ISessionFactory>().OpenSession()).InTransientScope();
-
 			Kernel.Bind<ISpeciesRepository>().To<SpeciesRepository>().InTransientScope();
+			Kernel.Bind<IWeaponRepository>().To<WeaponRepository>().InTransientScope();
 		}
 
 	}

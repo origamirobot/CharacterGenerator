@@ -20,7 +20,7 @@ namespace CharGen.Data.Mappings
 		/// </summary>
 		public WeaponMapping()
 		{
-			Table("Species");
+			Table("Weapons");
 			Id(x => x.Id, "Id");
 			Map(x => x.Name);
 			Map(x => x.Cost);
@@ -39,3 +39,7 @@ namespace CharGen.Data.Mappings
 	}
 
 }
+
+
+
+

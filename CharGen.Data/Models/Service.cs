@@ -18,5 +18,11 @@ namespace CharGen.Data.Models
 		/// </summary>
 		public virtual String Name { get; set; }
 
+		/// <summary>
+		/// Gets or sets the cost.
+		/// </summary>
+		public virtual Int32 Cost { get; set; }
+
+
 	}
 }

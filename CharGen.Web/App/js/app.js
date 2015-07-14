@@ -9,14 +9,17 @@ var charGenApp = angular.module("charGenApp", ["ngResource", "ngMessages", "ngRo
 		$routeProvider
 			.when("/", { templateUrl: "/app/html/index.html", controller: "homeCtrl" })
 			.when("/star-wars-d20/", { templateUrl: "/app/html/star-wars/00-basic.html", controller: "starWarsBasicCtrl" })
-			.when("/star-wars-d20/abilities", { templateUrl: "/app/html/star-wars/01-abilities.html", controller: "starWarsAbilitiesCtrl" })
-			.when("/star-wars-d20/species", { templateUrl: "/app/html/star-wars/02-species.html", controller: "starWarsSpeciesCtrl" })
-			.when("/star-wars-d20/class", { templateUrl: "/app/html/star-wars/03-class.html", controller: "starWarsClassCtrl" })
-			.when("/star-wars-d20/skills", { templateUrl: "/app/html/star-wars/04-skills.html", controller: "starWarsSkillsCtrl" })
-			.when("/star-wars-d20/feats", { templateUrl: "/app/html/star-wars/05-feats.html", controller: "starWarsFeatsCtrl" })
-			.when("/star-wars-d20/character", { templateUrl: "/app/html/star-wars/06-character.html", controller: "starWarsCharacterCtrl" })
-			.when("/star-wars-d20/gear", { templateUrl: "/app/html/star-wars/09-gear.html", controller: "starWarsGearCtrl" })
-			.when("/star-wars-d20/finish", { templateUrl: "/app/html/star-wars/10-finish.html", controller: "starWarsFinishCtrl" });
+			.when("/star-wars-d20/weapons", { templateUrl: "/app/html/star-wars/weapons.html", controller: "starWarsWeaponsCtrl" })
+			.when("/star-wars-d20/equipment", { templateUrl: "/app/html/star-wars/equipment.html", controller: "starWarsEquipmentCtrl" })
+			.when("/star-wars-d20/services", { templateUrl: "/app/html/star-wars/services.html", controller: "starWarsServicesCtrl" })
+			.when("/star-wars-d20/abilities", { templateUrl: "/app/html/star-wars/abilities.html", controller: "starWarsAbilitiesCtrl" })
+			.when("/star-wars-d20/species", { templateUrl: "/app/html/star-wars/species.html", controller: "starWarsSpeciesCtrl" })
+			.when("/star-wars-d20/class", { templateUrl: "/app/html/star-wars/class.html", controller: "starWarsClassCtrl" })
+			.when("/star-wars-d20/skills", { templateUrl: "/app/html/star-wars/skills.html", controller: "starWarsSkillsCtrl" })
+			.when("/star-wars-d20/feats", { templateUrl: "/app/html/star-wars/feats.html", controller: "starWarsFeatsCtrl" })
+			.when("/star-wars-d20/character", { templateUrl: "/app/html/star-wars/character.html", controller: "starWarsCharacterCtrl" })
+			.when("/star-wars-d20/gear", { templateUrl: "/app/html/star-wars/gear.html", controller: "starWarsGearCtrl" })
+			.when("/star-wars-d20/finish", { templateUrl: "/app/html/star-wars/finish.html", controller: "starWarsFinishCtrl" });
 	});
 
 
