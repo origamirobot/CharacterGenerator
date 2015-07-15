@@ -64,6 +64,8 @@ charGenApp.constant("character", {
 	generationMethod: "",
 	species: "",
 	'class': "",
+	level: 1,
+	classLevel: 1,
 	strength: 0,
 	dexterity: 0,
 	constitution: 0,

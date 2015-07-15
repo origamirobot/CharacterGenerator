@@ -14,208 +14,221 @@
 		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Your Character
 	</h1>
 </div>
+<div style="background:#FFF; padding:10px; border:1px solid #999;">
+
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-6 char-sheet-field">
+					<div>
+						{{character.characterName}}
+					</div>
+					<small>Character Name</small>
+				</div>
+				<div class="col-sm-6 char-sheet-field">
+					<div>
+						{{character.playerName}}
+					</div>
+					<small>Player Name</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 char-sheet-field">
+					<div>
+						{{character.class}}
+					</div>
+					<small>Class</small>
+				</div>
+				<div class="col-sm-3 char-sheet-field">
+					<div>
+						{{character.species}}
+					</div>
+					<small>Species</small>
+				</div>
+				<div class="col-sm-3 char-sheet-field">
+					<div>
+						{{character.level}}&nbsp;
+					</div>
+					<small>Level</small>
+				</div>
+				<div class="col-sm-3 char-sheet-field">
+					<div>
+						{{character.classLevel}}&nbsp;
+					</div>
+					<small>Class Level</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="row">
+						<div class="col-sm-6 char-sheet-field">
+							<div>
+								{{character.age}}&nbsp;
+							</div>
+							<small>Age</small>
+						</div>
+						<div class="col-sm-6 char-sheet-field">
+							<div>
+								{{character.sex}}&nbsp;
+							</div>
+							<small>Gender</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="row">
+						<div class="col-sm-6 char-sheet-field">
+							<div>
+								{{character.height}}&nbsp;
+							</div>
+							<small>Height</small>
+						</div>
+						<div class="col-sm-6 char-sheet-field">
+							<div>
+								{{character.weight}}&nbsp;
+							</div>
+							<small>Weight</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-4 char-sheet-field">
+							<div>
+								{{character.eyes}}&nbsp;
+							</div>
+							<small>Eyes</small>
+						</div>
+						<div class="col-sm-4 char-sheet-field">
+							<div>
+								{{character.hair}}&nbsp;
+							</div>
+							<small>Hair</small>
+						</div>
+						<div class="col-sm-4 char-sheet-field">
+							<div>
+								{{character.skin}}&nbsp;
+							</div>
+							<small>Skin</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4 text-center">
+			<img src="/App/img/logo.jpg" />
+		</div>
+	</div>
 
 
-<div class="panel form-horizontal">
-	<div class="panel-heading">
-		<span class="panel-title">Basic Info</span>
-	</div>
-	<div class="panel-body">
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Character Name</label>
-			<div class="col-sm-8">
-				{{character.characterName}}
-			</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<table class="char-table">
+				<thead>
+					<tr>
+						<th></th>
+						<th style="width: 70px;" class="text-center">ability score</th>
+						<th style="width:70px;" class="text-center">modifier</th>
+						<th style="width:70px;" class="text-center">temp score</th>
+						<th style="width:70px;" class="text-center">temp mod</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">STR</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">{{character.strength + character.strengthBonus}}</div></td>
+						<td><div style="border:1px solid #999; padding:10px;" class="text-center">{{character.strengthModifier}}&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">DEX</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">{{character.dexterity + character.dexterityBonus}}</div></td>
+						<td><div style="border:1px solid #999; padding:10px;" class="text-center">{{character.dexterityModifier}}&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">CON</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">{{character.constitution + character.constitutionBonus}}</div></td>
+						<td><div style="border:1px solid #999; padding:10px;" class="text-center">{{character.constitutionModifier}}&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">INT</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">{{character.intelligence + character.intelligenceBonus}}</div></td>
+						<td><div style="border:1px solid #999; padding:10px;" class="text-center">{{character.intelligenceModifier}}&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">WIS</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">{{character.wisdom + character.wisdomBonus}}</div></td>
+						<td><div style="border:1px solid #999; padding:10px;" class="text-center">{{character.wisdomModifier}}&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">CHA</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">{{character.charisma + character.charismaBonus}}</div></td>
+						<td><div style="border:1px solid #999; padding:10px;" class="text-center">{{character.charismaModifier}}&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Player Name</label>
-			<div class="col-sm-8">
-				{{character.playerName}}
+		<div class="col-sm-4">
+			<table class="char-table" style="width:330px;">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th style="width:80px;" class="text-center">Total</th>
+						<th style="width:80px;" class="text-center">Current</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">VITALITY</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td><div style="border: 1px solid #999; padding: 10px;" class="text-center">&nbsp;</div></td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size: 26px; color: #666">DEFENSE</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td class="text-right"><span style="font-size: 26px; color: #666">=10+</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="text-right"><strong style="font-size:26px; color:#666">SPEED</strong></td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td class="text-right">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="text-right">
+							<div><strong style="font-size: 20px; color: #666">BASE ATTACK</strong></div>
+							<div><small>BONUS</small></div>
+						</td>
+						<td><div style="border: 2px solid #666; padding: 10px;" class="text-center">&nbsp;</div></td>
+						<td class="text-right">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="char-sheet-field">
+				<div>
+					{{character.forcePoints}}&nbsp;
+				</div>
+				<small>Force Points</small>
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Sex</label>
-			<div class="col-sm-8">
-				{{character.sex}}
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Height</label>
-			<div class="col-sm-8">
-				{{character.height}}
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Weight</label>
-			<div class="col-sm-8">
-				{{character.weight}}
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Class</label>
-			<div class="col-sm-8">
-				{{character.class}}
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Species</label>
-			<div class="col-sm-8">
-				{{character.species}}
-			</div>
-		</div>
-	</div>
-</div>
 
+		</div>
+		<div class="col-sm-4">
 
-<div class="table-light">
-	<div class="table-header">
-		<div class="table-caption">Ability Scores</div>
+		</div>
 	</div>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Ability</th>
-				<th>Base Score</th>
-				<th>Modifier</th>
-				<th>Total</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Strength</td>
-				<td class="text-center">{{character.strength}}</td>
-				<td class="text-center" style="position:relative;">
-					{{character.strengthModifier}}
-					<i ng-class="strengthClass" style=" position:absolute; right:1px; top:10px;"></i>
-				</td>
-				<td class="text-center">{{character.strength + character.strengthModifier}}</td>
-			</tr>
-			<tr>
-				<td>Dexterity</td>
-				<td class="text-center">{{character.dexterity}}</td>
-				<td class="text-center" style="position:relative;">
-					{{character.dexterityModifier}}
-					<i ng-class="dexterityClass" style="position:absolute; right:1px; top:10px;"></i>
-				</td>
-				<td class="text-center">{{character.dexterity + character.dexterityModifier}}</td>
-			</tr>
-			<tr>
-				<td>Constitution</td>
-				<td class="text-center">{{character.constitution}}</td>
-				<td class="text-center" style="position:relative;">
-					{{character.constitutionModifier}}
-					<i ng-class="constitutionClass" style="position:absolute; right:1px; top:10px;"></i>
-				</td>
-				<td class="text-center">{{character.constitution + character.constitutionModifier}}</td>
-			</tr>
-			<tr>
-				<td>Intelligence</td>
-				<td class="text-center">{{character.intelligence}}</td>
-				<td class="text-center" style="position:relative;">
-					{{character.intelligenceModifier}}
-					<i ng-class="intelligenceClass" style="position:absolute; right:1px; top:10px;"></i>
-				</td>
-				<td class="text-center">{{character.intelligence + character.intelligenceModifier}}</td>
-			</tr>
-			<tr>
-				<td>Wisdom</td>
-				<td class="text-center">{{character.wisdom}}</td>
-				<td class="text-center" style="position:relative;">
-					{{character.wisdomModifier}}
-					<i ng-class="wisdomClass" style="position:absolute; right:1px; top:10px;"></i>
-				</td>
-				<td class="text-center">{{character.wisdom + character.wisdomModifier}}</td>
-			</tr>
-			<tr>
-				<td>Charisma</td>
-				<td class="text-center">{{character.charisma}}</td>
-				<td class="text-center" style="position:relative;">
-					{{character.charismaModifier}}
-					<i ng-class="charismaClass" style="position:absolute; right:1px; top:10px;"></i>
-				</td>
-				<td class="text-center">{{character.charisma + character.charismaModifier}}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-<div class="table-light">
-	<div class="table-header">
-		<div class="table-caption">Languages</div>
-	</div>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Language</th>
-				<th>Speak</th>
-				<th>Read</th>
-				<th>Write</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="lang in character.languages">
-				<td>{{lang.name}}</td>
-				<td class="text-center">
-					<i class="fa fa-check" ng-show="lang.speaks"></i>
-					<i class="fa fa-ban" ng-hide="lang.speaks"></i>
-				</td>
-				<td class="text-center">
-					<i class="fa fa-check" ng-show="lang.reads"></i>
-					<i class="fa fa-ban" ng-hide="lang.reads"></i>
-				</td>
-				<td class="text-center">
-					<i class="fa fa-check" ng-show="lang.writes"></i>
-					<i class="fa fa-ban" ng-hide="lang.writes"></i>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-<div class="table-light">
-	<div class="table-header">
-		<div class="table-caption">Skills</div>
-	</div>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Skill</th>
-				<th>Ability</th>
-				<th>Armor Check Penalty</th>
-				<th>Use Untrained</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="skill in character.skills">
-				<td>{{skill.name}}</td>
-				<td>{{skill.ability}}</td>
-				<td class="text-center">
-					<i class="fa fa-check" ng-show="skill.armorCheck"></i>
-					<i class="fa fa-ban" ng-hide="skill.armorCheck"></i>
-				</td>
-				<td class="text-center">
-					<i class="fa fa-check" ng-show="skill.useUntrained"></i>
-					<i class="fa fa-ban" ng-hide="skill.useUntrained"></i>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-<div class="table-light">
-	<div class="table-header">
-		<div class="table-caption">Feats</div>
-	</div>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Feat</th>
-				<th>Benefit</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="feat in character.feats">
-				<td>{{feat.name}}</td>
-				<td>{{feat.benefit}}</td>
-			</tr>
-		</tbody>
-	</table>
 </div>

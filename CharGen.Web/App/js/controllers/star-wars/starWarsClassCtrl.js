@@ -22,7 +22,7 @@ var starWarsClassCtrl = function ($scope, $location) {
 	};
 
 	$scope.selectJedi = function () {
-		$scope.classDescription = "";
+		$scope.classDescription = "Jedi combine physical training with mastery of the Force. Jedi concentrate on battle prowess, defense, and lightsaber training. Additionally, they are ambassadors of the Jedi order, protecting the Republic from all dangers. Few are strong enough in the Force and have the dvotion to walk the Jedi's path. but those few are awarded with a powerful ally. They walk in ta larger world than those who neither feel nor heed the Force.";
 		$scope.feats = [
 			{ name: "Force Sensitivity", value: true },
 			{ name: "Weapon Proficiency (light sabers)", value: true },
@@ -31,7 +31,7 @@ var starWarsClassCtrl = function ($scope, $location) {
 	};
 
 	$scope.selectNoble = function () {
-		$scope.classDescription = "";
+		$scope.classDescription = "Members of the noble class use their intelligence and natural charisma to make their way in the galaxy. From true royalty to elected officials, military commanders to crime lords, traders, merchants, ambassadors, holovid stars, and influential corporate magnates, character types who appear in the noble class are varied and numerous. Some bring honor to the name,. Others are sly, treacherous, and dishonorable to the core.";
 		$scope.feats = [
 			{ name: "Weapon Proficiency (pistols)", value: true },
 			{ name: "Weapon Proficiency (simple weapons)", value: true },
@@ -44,7 +44,7 @@ var starWarsClassCtrl = function ($scope, $location) {
 	};
 
 	$scope.selectScoundrel = function () {
-		$scope.classDescription = "";
+		$scope.classDescription = "Scoundrels are rogues-good, bad, and neutral-who either live outside the law or fiht against it in order to get the upper hand. They can come from any world or reion of the galaxy. Most use their intelligence and dexterityto accomplish tasks, and many rely on charisma as a fallback when all else fails.";
 		$scope.feats = [
 			{ name: "Point Blank Shot", value: true },
 			{ name: "Weapon Proficiency (pistols)", value: true },
@@ -53,7 +53,7 @@ var starWarsClassCtrl = function ($scope, $location) {
 	};
 
 	$scope.selectScout = function () {
-		$scope.classDescription = "";
+		$scope.classDescription = "Scouts are natural explorers and adventurers, full of curiosity and trained to handle the out-of-the-way locations where they often operate. Scouts then to be independent, signing on when the credits are good and their skills are best utilized and tested. Scouts understand the lay of the land and the obit of the stars.";
 		$scope.feats = [
 			{ name: "Weapon Proficiency (pistols)", value: true },
 			{ name: "Weapon Proficiency (rifles)", value: true },
@@ -62,7 +62,7 @@ var starWarsClassCtrl = function ($scope, $location) {
 	};
 
 	$scope.selectSoldier = function () {
-		$scope.classDescription = "";
+		$scope.classDescription = "Soldiers combine discipline with martial skills to become the best pure warriors in the galaxy.Soldiers can be stalwart defenders of those in need, cruel marauders, or brave adventurers. The can be hired guns, noble champions, or cold-hearted killers. They fight for glory, for honor, to right wrongs, to gain power, to acquire wealth, or simply for the thrill of battle.";
 		$scope.feats = [
 			{ name: "Armor Proficiency (light)", value: true },
 			{ name: "Armor Proficiency (medium)", value: true },

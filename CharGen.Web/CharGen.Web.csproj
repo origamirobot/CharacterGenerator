@@ -198,6 +198,8 @@
     <Content Include="App\js\controllers\star-wars\starWarsFeatsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsSkillsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsSpeciesCtrl.js" />
+    <Content Include="App\js\directives\empty.txt" />
+    <Content Include="App\js\filters\empty.txt" />
     <Content Include="App\js\services\armorService.js" />
     <Content Include="App\js\services\serviceService.js" />
     <Content Include="App\js\services\weaponService.js" />
@@ -1221,7 +1223,11 @@
     <Content Include="App\libs\moment\min\moment-with-langs.min.js" />
     <Content Include="App\libs\moment\min\moment.min.js" />
     <Content Include="App\libs\moment\moment.js" />
-    <Content Include="App\libs\ng-storage\ng-storage.js" />
+    <Content Include="App\libs\ngstorage\.gitignore" />
+    <Content Include="App\libs\ngstorage\Gruntfile.js" />
+    <Content Include="App\libs\ngstorage\ngStorage.js" />
+    <Content Include="App\libs\ngstorage\ngStorage.min.js" />
+    <Content Include="App\libs\ngstorage\test\spec.js" />
     <Content Include="App\libs\pixel_admin\CHANGELOG.txt" />
     <Content Include="App\libs\pixel_admin\Gruntfile.js" />
     <Content Include="App\libs\pixel_admin\help\assets\blueprint-css\ie.css" />
@@ -2698,16 +2704,22 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Left.cshtml" />
     <Content Include="Views\Shared\_Top.cshtml" />
     <Content Include="App_Data\CharGenDB.s3db" />
+    <Content Include="App\libs\ngstorage\.bower.json" />
+    <Content Include="App\libs\ngstorage\.bowerrc" />
+    <Content Include="App\libs\ngstorage\bower.json" />
+    <Content Include="App\libs\ngstorage\CHANGELOG.md" />
+    <Content Include="App\libs\ngstorage\LICENSE" />
+    <Content Include="App\libs\ngstorage\package.json" />
+    <Content Include="App\libs\ngstorage\README.md" />
+    <None Include="Properties\PublishProfiles\CharGenD20 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CharGenD20 - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\js\directives\" />
-    <Folder Include="App\js\filters\" />
     <Folder Include="App\libs\angular-ui\build\" />
     <Folder Include="App\libs\angular_ui\" />
     <Folder Include="App\libs\images-loaded\" />
