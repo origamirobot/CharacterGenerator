@@ -16,8 +16,9 @@ namespace CharGen.Web
 
 			routes.MapRoute("GetModifier", "abilities/modifier", new { controller = "Abilities", action = "GetModifier" });
 			routes.MapRoute("GetModifiers", "abilities/modifiers", new { controller = "Abilities", action = "GetModifiers" });
-	
+
 			routes.MapRoute("GetSpecies", "species/list", new { controller = "Species", action = "List" });
+			routes.MapRoute("SaveSpecies", "species/add", new { controller = "Species", action = "Save" });
 			routes.MapRoute("SpeciesAge", "species/{speciesId}/age/{age}", new { controller = "Species", action = "GetAgeRange" });
 
 			routes.MapRoute("SkillsList", "classes/{classId}/skills", new { controller = "Skill", action = "List" });

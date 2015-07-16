@@ -1,0 +1,47 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li class="active"><a href="#">Species</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Species
+	</h1>
+	<div class="pull-right">
+		<a href="/star-wars-d20/species/add" class="btn btn-default">Add Species</a>
+	</div>
+</div>
+
+
+<div class="table-light">
+	<div class="table-header">
+		<div class="table-caption">Species List</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr role="row">
+				<th>Name</th>
+				<th>STR Bonus</th>
+				<th>DEX Bonus</th>
+				<th>INT Bonus</th>
+				<th>CON Bonus</th>
+				<th>WIS Bonus</th>
+				<th>CHA Bonus</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="spe in species">
+				<td>{{spe.Name}}</td>
+				<td>{{spe.StrengthAdjustment}}</td>
+				<td>{{spe.DexterityAdjustment}}</td>
+				<td>{{spe.IntelligenceAdjustment}}</td>
+				<td>{{spe.ConstitutionAdjustment}}</td>
+				<td>{{spe.WisdomAdjustment}}</td>
+				<td>{{spe.CharismaAdjustment}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+

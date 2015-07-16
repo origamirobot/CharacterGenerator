@@ -1,0 +1,70 @@
+﻿<ul class="breadcrumb breadcrumb-page breadcrumb-dark" style="background:#999;">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Star Wars</a></li>
+	<li><a href="#">Species</a></li>
+	<li class="active"><a href="#">Add Species</a></li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		<i class="fa fa-rebel page-header-icon"></i>&nbsp;&nbsp;Add Species
+	</h1>
+</div>
+
+<div class="panel form-horizontal">
+	<div class="panel-heading">
+		<span class="panel-title">Add Species</span>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Species Name" ng-model="species.Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">STR Bonus</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" placeholder="Strength Bonus" ng-model="armor.StrengthAdjustment">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">CON Bonus</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" placeholder="Constitution Bonus" ng-model="armor.ConstitutionAdjustment">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">DEX Bonus</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" placeholder="Dexterity Bonus" ng-model="armor.DexterityAdjustment">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">INT Bonus</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" placeholder="Intelligence Bonus" ng-model="armor.IntelligenceAdjustment">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">WIS Bonus</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" placeholder="Wisdom Bonus" ng-model="armor.WisdomAdjustment">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">CHA Bonus</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" placeholder="Charisma Bonus" ng-model="armor.CharismaAdjustment">
+			</div>
+		</div>
+		<div class="form-group" style="margin-bottom: 0;">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-primary" ng-click="save()">Save</button>
+				<a href="/star-wars-d20/species/list" class="btn btn-default">Cancel</a>
+				<span class="text-success" ng-show="showSuccessMessage">{{successMessage}}</span>
+				<span class="text-danger" ng-show="showErrorMessage">{{errorMessage}}</span>
+			</div>
+		</div>
+	</div>
+</div>

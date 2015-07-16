@@ -17,6 +17,8 @@ var charGenApp = angular.module("charGenApp", ["ngResource", "ngMessages", "ngRo
 			.when("/star-wars-d20/services", { templateUrl: "/app/html/star-wars/services.html", controller: "starWarsServicesCtrl" })
 			.when("/star-wars-d20/abilities", { templateUrl: "/app/html/star-wars/abilities.html", controller: "starWarsAbilitiesCtrl" })
 			.when("/star-wars-d20/species", { templateUrl: "/app/html/star-wars/species.html", controller: "starWarsSpeciesCtrl" })
+			.when("/star-wars-d20/species/list", { templateUrl: "/app/html/star-wars/species-list.html", controller: "starWarsSpeciesListCtrl" })
+			.when("/star-wars-d20/species/add", { templateUrl: "/app/html/star-wars/species-add.html", controller: "starWarsSpeciesAddCtrl" })
 			.when("/star-wars-d20/class", { templateUrl: "/app/html/star-wars/class.html", controller: "starWarsClassCtrl" })
 			.when("/star-wars-d20/skills", { templateUrl: "/app/html/star-wars/skills.html", controller: "starWarsSkillsCtrl" })
 			.when("/star-wars-d20/feats", { templateUrl: "/app/html/star-wars/feats.html", controller: "starWarsFeatsCtrl" })

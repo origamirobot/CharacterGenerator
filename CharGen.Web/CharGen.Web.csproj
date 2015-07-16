@@ -172,6 +172,8 @@
     <Content Include="App\html\star-wars\feats.html" />
     <Content Include="App\html\star-wars\services.html" />
     <Content Include="App\html\star-wars\armor.html" />
+    <Content Include="App\html\star-wars\species-add.html" />
+    <Content Include="App\html\star-wars\species-list.html" />
     <Content Include="App\html\star-wars\weapons.html" />
     <Content Include="App\html\star-wars\equipment.html" />
     <Content Include="App\html\star-wars\character.html" />
@@ -180,6 +182,7 @@
     <Content Include="App\html\star-wars\class.html" />
     <Content Include="App\html\star-wars\species.html" />
     <Content Include="App\html\star-wars\abilities.html" />
+    <Content Include="App\img\logo.jpg" />
     <Content Include="App\js\app.js" />
     <Content Include="App\js\controllers\appCtrl.js" />
     <Content Include="App\js\controllers\homeCtrl.js" />
@@ -190,6 +193,8 @@
     <Content Include="App\js\controllers\star-wars\starWarsServicesCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsEquipmentCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsArmorCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsSpeciesAddCtrl.js" />
+    <Content Include="App\js\controllers\star-wars\starWarsSpeciesListCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsWeaponsCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsBasicCtrl.js" />
     <Content Include="App\js\controllers\star-wars\starWarsAbilitiesCtrl.js" />
@@ -202,6 +207,7 @@
     <Content Include="App\js\filters\empty.txt" />
     <Content Include="App\js\services\armorService.js" />
     <Content Include="App\js\services\serviceService.js" />
+    <Content Include="App\js\services\speciesService.js" />
     <Content Include="App\js\services\weaponService.js" />
     <Content Include="App\js\services\equipmentService.js" />
     <Content Include="App\js\services\abilityService.js" />

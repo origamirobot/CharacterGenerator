@@ -8,6 +8,10 @@ using CharGen.Data.Repositories;
 
 namespace CharGen.Web.Controllers
 {
+
+	/// <summary>
+	/// 
+	/// </summary>
     public class SpeciesController : Controller
     {
 
@@ -87,6 +91,25 @@ namespace CharGen.Web.Controllers
 			}
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="species"></param>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult Save(Species species)
+		{
+			try
+			{
+				SpeciesRepository.Save(species);
+				SpeciesRepository.Session.Flush();
+				return Json(new { Success = true, Message = "Species saved successfully" }, JsonRequestBehavior.AllowGet);
+			}
+			catch (Exception ex)
+			{
+				return Json(new { Success = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+			}
+		}
 
 		#endregion ACTION METHODS
 
