@@ -7,7 +7,8 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 	$scope.genMethodDescription = "";
 	$scope.showGenDescription = false;
 	$scope.showAbilityForm = false;
-
+	$scope.showDieRollButton = false;
+	$scope.diceRolled = false;
 	$scope.plannedDefaultValue = 8;
 
 	$scope.strength = character.strength;
@@ -51,9 +52,11 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 			case "DieRollGeneration":
 				$scope.abilitiesReadOnly = false;
 				$scope.showAmountToSpend = false;
+				$scope.showDieRollButton = true;
 				$scope.amountLeftToSpend = 0;
 				break;
 			case "PlannedGeneration":
+				$scope.showDieRollButton = false;
 				$scope.abilitiesReadOnly = false;
 				$scope.showAmountToSpend = true;
 				$scope.amountLeftToSpend = $scope.defaultAmountToSpend;
@@ -65,6 +68,7 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 				$scope.charisma = $scope.plannedDefaultValue;
 				break;
 			case "StandardScorePackage":
+				$scope.showDieRollButton = false;	
 				$scope.abilitiesReadOnly = true;
 				$scope.showAmountToSpend = false;
 				$scope.amountLeftToSpend = 0;
@@ -78,6 +82,40 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 		}
 	}
 
+	$scope.rollDice = function () {
+
+		$scope.strRoll1 = Math.floor((Math.random() * 6) + 1);
+		$scope.strRoll2 = Math.floor((Math.random() * 6) + 1);
+		$scope.strRoll3 = Math.floor((Math.random() * 6) + 1);
+		$scope.strength = $scope.strRoll1 + $scope.strRoll2 + $scope.strRoll3;
+
+		$scope.conRoll1 = Math.floor((Math.random() * 6) + 1);
+		$scope.conRoll2 = Math.floor((Math.random() * 6) + 1);
+		$scope.conRoll3 = Math.floor((Math.random() * 6) + 1);
+		$scope.constitution = $scope.conRoll1 + $scope.conRoll2 + $scope.conRoll3;
+
+		$scope.dexRoll1 = Math.floor((Math.random() * 6) + 1);
+		$scope.dexRoll2 = Math.floor((Math.random() * 6) + 1);
+		$scope.dexRoll3 = Math.floor((Math.random() * 6) + 1);
+		$scope.dexterity = $scope.dexRoll1 + $scope.dexRoll2 + $scope.dexRoll3;
+
+		$scope.intRoll1 = Math.floor((Math.random() * 6) + 1);
+		$scope.intRoll2 = Math.floor((Math.random() * 6) + 1);
+		$scope.intRoll3 = Math.floor((Math.random() * 6) + 1);
+		$scope.intelligence = $scope.intRoll1 + $scope.intRoll2 + $scope.intRoll3;
+
+		$scope.wisRoll1 = Math.floor((Math.random() * 6) + 1);
+		$scope.wisRoll2 = Math.floor((Math.random() * 6) + 1);
+		$scope.wisRoll3 = Math.floor((Math.random() * 6) + 1);
+		$scope.wisdom = $scope.wisRoll1 + $scope.wisRoll2 + $scope.wisRoll3;
+
+		$scope.chaRoll1 = Math.floor((Math.random() * 6) + 1);
+		$scope.chaRoll2 = Math.floor((Math.random() * 6) + 1);
+		$scope.chaRoll3 = Math.floor((Math.random() * 6) + 1);
+		$scope.charisma = $scope.chaRoll1 + $scope.chaRoll2 + $scope.chaRoll3;
+
+		$scope.diceRolled = true;
+	};
 
 	$scope.abilityChanged = function () {
 		if ($scope.selectedGenMethod !== "PlannedGeneration")
@@ -93,9 +131,12 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 	}
 
 	$scope.acceptScores = function () {
+
 		if ($scope.amountLeftToSpend !== 0)
 			return;
 
+		if ($scope.generationMethod === "DieRollGeneration" && !$scope.diceRolled)
+			return;
 
 		character.strength = $scope.strength;
 		character.dexterity = $scope.dexterity;
@@ -103,6 +144,28 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 		character.intelligence = $scope.intelligence;
 		character.wisdom = $scope.wisdom;
 		character.charisma = $scope.charisma;
+
+		if ($scope.generationMethod === "DieRollGeneration") {
+			character.strRoll1 = $scope.strRoll1;
+			character.strRoll2 = $scope.strRoll2;
+			character.strRoll3 = $scope.strRoll3;
+			character.conRoll1 = $scope.conRoll1;
+			character.conRoll2 = $scope.conRoll2;
+			character.conRoll3 = $scope.conRoll3;
+			character.dexRoll1 = $scope.dexRoll1;
+			character.dexRoll2 = $scope.dexRoll2;
+			character.dexRoll3 = $scope.dexRoll3;
+			character.intRoll1 = $scope.intRoll1;
+			character.intRoll2 = $scope.intRoll2;
+			character.intRoll3 = $scope.intRoll3;
+			character.wisRoll1 = $scope.wisRoll1;
+			character.wisRoll2 = $scope.wisRoll2;
+			character.wisRoll3 = $scope.wisRoll3;
+			character.chaRoll1 = $scope.chaRoll1;
+			character.chaRoll2 = $scope.chaRoll2;
+			character.chaRoll3 = $scope.chaRoll3;
+		}
+
 
 		localStorage.setItem("character", JSON.stringify(character));
 		$location.path("/star-wars-d20/species");
@@ -118,8 +181,31 @@ var starWarsAbilitiesCtrl = function ($scope, $location, abilityService) {
 		$scope.intelligence = character.intelligence;
 		$scope.wisdom = character.wisdom;
 		$scope.charisma = character.charisma;
+
+		$scope.strRoll1 = character.strRoll1;
+		$scope.strRoll2 = character.strRoll2;
+		$scope.strRoll3 = character.strRoll3;
+		$scope.conRoll1 = character.conRoll1;
+		$scope.conRoll2 = character.conRoll2;
+		$scope.conRoll3 = character.conRoll3;
+		$scope.dexRoll1 = character.dexRoll1;
+		$scope.dexRoll2 = character.dexRoll2;
+		$scope.dexRoll3 = character.dexRoll3;
+		$scope.intRoll1 = character.intRoll1;
+		$scope.intRoll2 = character.intRoll2;
+		$scope.intRoll3 = character.intRoll3;
+		$scope.wisRoll1 = character.wisRoll1;
+		$scope.wisRoll2 = character.wisRoll2;
+		$scope.wisRoll3 = character.wisRoll3;
+		$scope.chaRoll1 = character.chaRoll1;
+		$scope.chaRoll2 = character.chaRoll2;
+		$scope.chaRoll3 = character.chaRoll3;
+
+
 		$scope.abilityChanged();
 	}
+
+
 
 };
 

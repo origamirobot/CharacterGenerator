@@ -78,7 +78,7 @@
 		var wis = $scope.wisdom + $scope.wisdomBonus;
 		var cha = $scope.charisma + $scope.charismaBonus;
 
-		abilityService.getModifiers(str, dex, inte, con, wis, cha).then(function (result) {
+		abilityService.getModifiers(str, dex, con, inte, wis, cha).then(function (result) {
 			$scope.loadingModifiers = false;
 			$scope.strengthModifier = result.strengthModifier;
 			$scope.dexterityModifier = result.dexterityModifier;

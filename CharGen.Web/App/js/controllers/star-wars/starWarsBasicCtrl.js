@@ -1,7 +1,7 @@
 ﻿
 var starWarsBasicCtrl = function ($scope, $location) {
 
-
+	/*
 	$scope.playerName = "Chris Lees";
 	$scope.characterName = "Ah'Laes";
 	$scope.age = 33;
@@ -11,7 +11,7 @@ var starWarsBasicCtrl = function ($scope, $location) {
 	$scope.hair = "None";
 	$scope.height = "6'";
 	$scope.weight = 190;
-
+	*/
 
 	$scope.accept = function() {
 

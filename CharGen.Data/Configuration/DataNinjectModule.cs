@@ -33,6 +33,7 @@ namespace Karaoke.Data.Configuration
 			Kernel.Bind<IAgeRepository>().To<AgeRepository>().InTransientScope();
 			Kernel.Bind<ISkillRepository>().To<SkillRepository>().InTransientScope();
 			Kernel.Bind<IClassRepository>().To<ClassRepository>().InTransientScope();
+			Kernel.Bind<IModifierRepository>().To<ModifierRepository>().InTransientScope();
 		}
 
 	}

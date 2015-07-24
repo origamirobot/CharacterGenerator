@@ -161,8 +161,7 @@ var starWarsSkillsCtrl = function ($scope, $location) {
 		$scope.showScoundrelSkills = false;
 		$scope.showSoldierSkills = false;
 
-		var intelligence = character.intelligence + character.intelligenceModifier;
-		var intModifier = intelligence - 11;
+		var intModifier = character.intelligenceModifier.Value;
 		if (intModifier < 0)
 			intModifier = 0;
 		

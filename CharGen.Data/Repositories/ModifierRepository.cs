@@ -7,22 +7,22 @@ namespace CharGen.Data.Repositories
 	/// <summary>
 	/// 
 	/// </summary>
-	public interface IAgeRepository : IRepository<Age> { }
+	public interface IModifierRepository : IRepository<Modifier> { }
 
 	/// <summary>
 	/// 
 	/// </summary>
-	public class AgeRepository : BaseRepository<Age>, IAgeRepository
+	public class ModifierRepository : BaseRepository<Modifier>, IModifierRepository
 	{
 
 		#region CONSTRUCTORS
 
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AgeRepository"/> class.
+		/// Initializes a new instance of the <see cref="ModifierRepository"/> class.
 		/// </summary>
 		/// <param name="session">The session.</param>
-		public AgeRepository(ISession session) : base(session) { }
+		public ModifierRepository(ISession session) : base(session) { }
 
 
 		#endregion CONSTRUCTORS

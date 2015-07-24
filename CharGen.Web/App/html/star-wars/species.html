@@ -165,7 +165,7 @@
 							<i ng-class="strengthClass" style=" position:absolute; right:1px; top:10px;"></i>
 						</td>
 						<td class="text-center">
-							{{strengthModifier}}
+							{{strengthModifier.Value}}
 							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{strengthTotal}}</td>
@@ -178,7 +178,7 @@
 							<i ng-class="dexterityClass" style="position:absolute; right:1px; top:10px;"></i>
 						</td>
 						<td class="text-center" style="position: relative;">
-							{{dexterityModifier}}
+							{{dexterityModifier.Value}}
 							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{dexterityTotal}}</td>
@@ -190,7 +190,10 @@
 							{{constitutionBonus}}
 							<i ng-class="constitutionClass" style="position: absolute; right: 1px; top: 10px;"></i>
 						</td>
-						<td class="text-center" style="position:relative;">{{constitutionModifier}}</td>
+						<td class="text-center" style="position:relative;">
+							{{constitutionModifier.Value}}
+							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
+						</td>
 						<td class="text-center">{{constitutionTotal}}</td>
 					</tr>
 					<tr>
@@ -201,7 +204,7 @@
 							<i ng-class="intelligenceClass" style="position:absolute; right:1px; top:10px;"></i>
 						</td>
 						<td class="text-center" style="position: relative;">
-							{{intelligenceModifier}}
+							{{intelligenceModifier.Value}}
 							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{intelligenceTotal}}</td>
@@ -214,7 +217,7 @@
 							<i ng-class="wisdomClass" style="position:absolute; right:1px; top:10px;"></i>
 						</td>
 						<td class="text-center" style="position: relative;">
-							{{wisdomModifier}}
+							{{wisdomModifier.Value}}
 							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{wisdomTotal}}</td>
@@ -227,7 +230,7 @@
 							<i ng-class="charismaClass" style="position:absolute; right:1px; top:10px;"></i>
 						</td>
 						<td class="text-center" style="position: relative;">
-							{{charismaModifier}}
+							{{charismaModifier.Value}}
 							<i class="fa fa-spin fa-spinner" ng-show="loadingModifiers"></i>
 						</td>
 						<td class="text-center">{{charismaTotal}}</td>

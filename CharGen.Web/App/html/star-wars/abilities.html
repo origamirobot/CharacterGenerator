@@ -59,6 +59,12 @@
 <div class="panel form-horizontal" ng-show="showAbilityForm">
 	<div class="panel-heading">Ability Scores</div>
 	<div class="panel-body">
+		<div class="form-group" ng-show="showDieRollButton">
+			<label class="col-sm-2 control-label">&nbsp;</label>
+			<div class="col-sm-2">
+				<button class="btn btn-default" ng-click="rollDice()">Roll Dice</button>
+			</div>
+		</div>
 		<div class="form-group" ng-show="showAmountToSpend">
 			<label class="col-sm-2 control-label">
 				Amount Left to Spend
@@ -72,43 +78,49 @@
 				Strength
 			</label>
 			<div class="col-sm-2">
-				<input type="number" class="form-control" ng-model="strength" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+				<input type="number" class="form-control" ng-model="strength" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly"/>
 			</div>
+			<div ng-show="diceRolled" class="col-sm-4 control-label" style="text-align: left;">{{strRoll1}} + {{strRoll2}} + {{strRoll3}}</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Dexterity</label>
 			<div class="col-sm-2">
-				<input type="number" class="form-control" ng-model="dexterity" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+				<input type="number" class="form-control" ng-model="dexterity" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly"/>
 			</div>
+			<div ng-show="diceRolled" class="col-sm-4 control-label" style="text-align: left;">{{dexRoll1}} + {{dexRoll2}} + {{dexRoll3}}</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Constitution</label>
 			<div class="col-sm-2">
-				<input type="number" class="form-control" ng-model="constitution" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+				<input type="number" class="form-control" ng-model="constitution" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly"/>
 			</div>
+			<div ng-show="diceRolled" class="col-sm-4 control-label" style="text-align: left;">{{conRoll1}} + {{conRoll2}} + {{conRoll3}}</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Intelligence</label>
 			<div class="col-sm-2">
-				<input type="number" class="form-control" ng-model="intelligence" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+				<input type="number" class="form-control" ng-model="intelligence" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly"/>
 			</div>
+			<div ng-show="diceRolled" class="col-sm-4 control-label" style="text-align: left;">{{intRoll1}} + {{intRoll2}} + {{intRoll3}}</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Wisdom</label>
 			<div class="col-sm-2">
-				<input type="number" class="form-control" ng-model="wisdom" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+				<input type="number" class="form-control" ng-model="wisdom" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly"/>
 			</div>
+			<div ng-show="diceRolled" class="col-sm-4 control-label" style="text-align: left;">{{wisRoll1}} + {{wisRoll2}} + {{wisRoll3}}</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Charisma</label>
 			<div class="col-sm-2">
-				<input type="number" class="form-control" ng-model="charisma" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly" />
+				<input type="number" class="form-control" ng-model="charisma" maxlength="2" ng-change="abilityChanged()" ng-readonly="abilitiesReadOnly"/>
 			</div>
+			<div ng-show="diceRolled" class="col-sm-4 control-label" style="text-align: left;">{{chaRoll1}} + {{chaRoll2}} + {{chaRoll3}}</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2">&nbsp;</label>
 			<div class="col-sm-4">
-				<button class="btn btn-default" ng-click="acceptScores()" style="margin-right:30px;">Accept These Scores</button>
+				<button class="btn btn-default" ng-click="acceptScores()" style="margin-right: 30px;">Accept These Scores</button>
 				<i class="fa fa-spin fa-spinner" ng-show="loading"></i>
 			</div>
 		</div>
